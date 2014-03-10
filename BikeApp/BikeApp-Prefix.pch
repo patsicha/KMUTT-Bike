@@ -14,4 +14,16 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import <CoreLocation/CoreLocation.h>
+    #import <MapKit/MapKit.h>
+    #import "AMProgressView.h"
+    #import "UIImage+RoundedCorner.h"
+    #import "UIImage+Resize.h"
+    #define tahoma(s) [UIFont fontWithName:@"Tahoma" size:s]
+    #define tahomab(s) [UIFont fontWithName:@"Tahoma-Bold" size:s]
+    #define segoeui(s) [UIFont fontWithName:@"SegoeUI" size:s]
+    #define segoeuib(s) [UIFont fontWithName:@"SegoeUI-Bold" size:s]
+    #define segoeuii(s) [UIFont fontWithName:@"SegoeUI-Italic" size:s]
+    #define segoeuil(s) [UIFont fontWithName:@"SegoeUI-Light" size:s]
+
 #endif
