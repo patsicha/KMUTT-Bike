@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol WheelDelegate;
 @interface WheelTabViewController : UITabBarController
-
+@property (assign, nonatomic) id <WheelDelegate>delegate;
+@end
+@protocol WheelDelegate<NSObject>
+@optional
+- (void)test;
 @end

@@ -7,9 +7,11 @@
 //
 #import "NotifyViewController.h"
 
-@interface NotifyViewController ()
+@interface NotifyViewController () <UIPickerViewDataSource,UIPickerViewDelegate,UIAlertViewDelegate>
 {
     IBOutlet UILabel *lblLocation;
+    IBOutlet UITextField *txtEmergency;
+
 }
 @end
 
@@ -39,6 +41,28 @@
     
     [self startStandardUpdates];
 }
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];// this will do the trick
+}
+- (IBAction)sendLoc:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure ?"
+                                                    message:@"Send your location and message to admin"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Yes"
+                                          otherButtonTitles:@"No", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    // the user clicked OK
+    if (buttonIndex == 0) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    
+    
+}
+
+    
 
 - (void)didReceiveMemoryWarning
 {
@@ -122,6 +146,9 @@ didUpdateUserLocation:
      ];
 }
 - (IBAction)makeCall:(id)sender {
-     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"facetime:+66869208968"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:+66820591607"]];
+}
+- (IBAction)videoCall:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"facetime:iamnattyboyz@hotmail.com"]];
 }
 @end

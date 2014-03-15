@@ -8,11 +8,13 @@
 
 #import "WelcomeViewController.h"
 #import "YourPageViewController.h"
+#import "SettingsViewController.h"
 
 @interface WelcomeViewController ()
 {
-    IBOutlet UILabel *txtName;
-    IBOutlet UILabel *txtWelcome;
+    IBOutlet UILabel *lblName;
+    IBOutlet UILabel *lblWelcome;
+    IBOutlet UILabel *lblTitleCode;
     IBOutlet UIButton *btnCheckOut;
     NSTimer *timer;
     int x;
@@ -41,12 +43,23 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
+
     [super viewDidLoad];
+    
+    NSString *model = [[UIDevice currentDevice] model];
+    if ([model isEqualToString:@"iPhone Simulator"]) {
+        txtPassword.text = @"a123";
+    }
+    
+    [self.navigationItem setHidesBackButton:YES];
 	// Do any additional setup after loading the view.
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    
+    lblName.font = segoeui(26);
+    lblWelcome.font = segoeui(13);
+    lblTitleCode.font = segoeui(13);
     
     UIColor *topColor = [UIColor colorWithRed:255/255.0f green:195/255.0f blue:64/255.0f alpha:1.0f];
     [self.navigationController.navigationBar setBarTintColor:topColor];
@@ -80,11 +93,49 @@
     
     imgCheckOut = [UIImage imageNamed:@"checkout.png"];
     imgCancel = [UIImage imageNamed:@"cancel.png"];
+    self.navigationItem.rightBarButtonItem=[self settingsButton];
+    
+    
 }
 
+- (UIBarButtonItem *)settingsButton
+{
+    UIImage *imgUrgent = [UIImage imageNamed:@"gear_setting_white"];
+    CGRect buttonFrame = CGRectMake(0, 0, imgUrgent.size.width/2, imgUrgent.size.height/2);
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:buttonFrame];
+    [button addTarget:self action:@selector(settingsPressed) forControlEvents:UIControlEventTouchUpInside];
+    [button setImage:imgUrgent forState:UIControlStateNormal];
+    
+    UIBarButtonItem *item= [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    return item;
+}
+- (void)settingsPressed
+{
+    SettingsViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Settings"];
+    svc.delegate = self;
+    [self presentPopupViewController:svc animationType:MJPopupViewAnimationSlideTopTop];
+}
+
+- (void)okButtonClicked:(SettingsViewController *)aSecondDetailViewController
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:nil  forKey:@"MemberInfo"];
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopBottom];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+- (void)cancelButtonClicked:(SettingsViewController *)aSecondDetailViewController
+{
+    [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopTop];
+    //[self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 - (void)viewDidAppear:(BOOL)animated{
-    txtName.alpha = 1;
-    txtWelcome.alpha = 1;
+    lblName.alpha = 1;
+    lblWelcome.alpha = 1;
+    //self.navigationController.navigationBarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -194,16 +245,34 @@
 }
 
 - (IBAction)checkOut:(id)sender {
+    if(x!=0)
+    {
+        [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
+        [lblWelcome setText:@"Welcome ^ ^"];
+        [timer invalidate];
+        txtPassword.text = @"";
+        lbl0.text = @" ";
+        lbl1.text = @" ";
+        lbl2.text = @" ";
+        lbl3.text = @" ";
+        
+        [img0 setHidden:NO];
+        [img1 setHidden:NO];
+        [img2 setHidden:NO];
+        [img3 setHidden:NO];
+        
+        x=0;
+    }else{
     if([txtPassword.text length] == 4) {
-        if([[txtWelcome text] isEqualToString:@"Welcome ^ ^"])
+        if([[lblWelcome text] isEqualToString:@"Welcome ^ ^"] || [[lblWelcome text] isEqualToString:@"Please enter a valid code :)"])
         {
             x =0;
-            [txtWelcome setText:@"Pending"];
+            [lblWelcome setText:@"Pending"];
             [btnCheckOut setBackgroundImage:imgCancel forState:UIControlStateNormal];
             timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
         }else{
             [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
-            [txtWelcome setText:@"Welcome ^ ^"];
+            [lblWelcome setText:@"Welcome ^ ^"];
             [timer invalidate];
         }
     }else{
@@ -212,15 +281,18 @@
         [self shakeView:img1];
         [self shakeView:img2];
         [self shakeView:img3];
+        [lblWelcome setText:@"Please enter a valid code :)"];
+        
+    }
     }
     
 }
 -(void)timerFired
 {
-    if( ++x == 10) [self goYourBike];
-    [txtWelcome setText:[[NSString alloc]initWithFormat:@" %@.",[txtWelcome text]]];
-    if([[txtWelcome text] isEqualToString:@"    Pending...."])
-        [txtWelcome setText:@"Pending"];
+    if( ++x == 5) [self goYourBike];
+    [lblWelcome setText:[[NSString alloc]initWithFormat:@" %@.",[lblWelcome text]]];
+    if([[lblWelcome text] isEqualToString:@"    Pending...."])
+        [lblWelcome setText:@"Pending"];
 }
 
 
@@ -229,8 +301,8 @@
     [UIView setAnimationDuration:0.5];
     [UIView setAnimationDelegate:self];
     [self.imageView setCenter:CGPointMake(75, 64)];
-    txtName.alpha = 0;
-    txtWelcome.alpha = 0;
+    lblName.alpha = 0;
+    lblWelcome.alpha = 0;
     [UIView commitAnimations];
 }
 - (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context{
@@ -240,6 +312,9 @@
         transition.duration = 1;
         transition.type = kCATransitionFade;
         transition.subtype = kCATransitionFromTop;
+        svc.bikeCode = [[txtPassword text] uppercaseString];
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:[[txtPassword text] uppercaseString]  forKey:@"bikeCode"];
         [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
         [self.navigationController pushViewController:svc animated:NO];
     }

@@ -10,5 +10,5 @@
 
 @interface YourPageViewController : PagerViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
+@property (nonatomic) NSString *bikeCode;
 @end

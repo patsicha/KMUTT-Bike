@@ -15,6 +15,7 @@
     IBOutlet UIView *contentView2;
     IBOutlet UIScrollView *scrollView;
     IBOutlet UIPageControl *contentPageControl;
+    IBOutlet UIImageView *bg;
 }
 
 - (IBAction)changePage:(id)sender;

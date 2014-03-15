@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TireViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @end

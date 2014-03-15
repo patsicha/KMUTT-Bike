@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BreakViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

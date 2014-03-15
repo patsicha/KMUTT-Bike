@@ -55,8 +55,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	for (NSUInteger i =0; i < [self.childViewControllers count]; i++) {
+	if(scrollView.contentSize.width < 960) {
+	for (NSUInteger i =0; i < 3; i++) {
 		[self loadScrollViewWithPage:i];
 	}
 	
@@ -70,13 +70,15 @@
 	}
 	
 	scrollView.contentSize = CGSizeMake(scrollView.frame.size.width * [self.childViewControllers count], scrollView.frame.size.height);
+    }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	
 	if ([self.childViewControllers count]) {
-        NSLog(@"%i",contentPageControl.currentPage);
+       // NSLog(@"%i",contentPageControl.currentPage);
         scrollView.contentOffset = CGPointMake(scrollView.frame.size.width, 0);
 		UIViewController *viewController = [self.childViewControllers objectAtIndex:contentPageControl.currentPage];
 		if (viewController.view.superview != nil) {
@@ -193,7 +195,6 @@
 	UIViewController *newViewController = [self.childViewControllers objectAtIndex:contentPageControl.currentPage];
 	[oldViewController viewDidDisappear:YES];
 	[newViewController viewDidAppear:YES];
-	
 	_page = contentPageControl.currentPage;
 }
 
@@ -208,7 +209,14 @@
         // do nothing - the scroll was initiated from the page control, not the user dragging
         return;
     }
-	
+    float x = scrollView.contentOffset.x;
+    float alpha= 0;
+    if(x >320) x=(640-scrollView.contentOffset.x);
+
+    alpha = x/320;
+    
+    bg.alpha = alpha;
+    
     // Switch the indicator when more than 50% of the previous/next page is visible
     CGFloat pageWidth = scrollView.frame.size.width;
     int page = floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;

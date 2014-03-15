@@ -7,9 +7,9 @@
 //
 
 #import "LoginViewController.h"
+#import "FirstViewController.h"
 
 @interface LoginViewController ()
-
 @end
 
 @implementation LoginViewController
@@ -35,7 +35,42 @@
 {
     [super viewDidLoad];
 	[self setUI];
+    //[self fontall];
     
+    NSString *model = [[UIDevice currentDevice] model];
+    if ([model isEqualToString:@"iPhone Simulator"]) {
+        txtUsername.text = @"53211536";
+        txtPassword.text = @"1234";
+    }
+    
+}
+- (IBAction)login:(id)sender {
+    
+    if([txtUsername.text isEqualToString:@"53211536"] && [txtPassword.text isEqualToString:@"1234"])
+    {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:txtUsername.text  forKey:@"MemberInfo"];
+        
+        txtUsername.text = @"";
+        txtPassword.text = @"";
+        
+        [EEHUDView growlWithMessage:@"welcome"
+                          showStyle:EEHUDViewShowStyleFadeIn
+                          hideStyle:EEHUDViewHideStyleFadeOut
+                    resultViewStyle:EEHUDResultViewStyleChecked
+                           showTime:1.0];
+
+        FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+        [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [self presentViewController:svc animated:YES completion:nil];
+    }
+    else{
+        [EEHUDView growlWithMessage:@"miss something?"
+                          showStyle:EEHUDViewShowStyleShake
+                          hideStyle:EEHUDViewHideStyleFadeOut
+                    resultViewStyle:EEHUDResultViewStyleNG
+                           showTime:0.75];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +92,14 @@
     [btnFacebook setBackgroundImage:[UIImage imageNamed:@"facebook_click.png"] forState:UIControlStateHighlighted];
     [btnTwitter setBackgroundImage:[UIImage imageNamed:@"twitter.png"] forState:UIControlStateNormal];
     [btnTwitter setBackgroundImage:[UIImage imageNamed:@"twitter_click.png"] forState:UIControlStateHighlighted];
+    
 }
+- (IBAction)facebook:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.facebook.com/KMUTTVolunteer"]];
+}
+- (IBAction)twitter:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/kmuttbike"]];
+}
+
 
 @end

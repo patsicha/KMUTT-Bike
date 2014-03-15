@@ -49,7 +49,8 @@
     UIImageView *img = (UIImageView *)[cell viewWithTag:100];
     UILabel *name = (UILabel *)[cell viewWithTag:101];
     UILabel *info = (UILabel *)[cell viewWithTag:102];
-    
+    name.font = segoeui(10);
+    info.font = segoeuil(9);
     if(indexPath.row == 0)
     {
         img.image = [UIImage imageNamed:@"10km.png"];

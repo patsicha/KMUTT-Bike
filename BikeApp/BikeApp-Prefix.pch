@@ -19,11 +19,16 @@
     #import "AMProgressView.h"
     #import "UIImage+RoundedCorner.h"
     #import "UIImage+Resize.h"
+    #import "UIViewController+MJPopupViewController.h"
+    #import "EEHUDView.h"
     #define tahoma(s) [UIFont fontWithName:@"Tahoma" size:s]
     #define tahomab(s) [UIFont fontWithName:@"Tahoma-Bold" size:s]
     #define segoeui(s) [UIFont fontWithName:@"SegoeUI" size:s]
     #define segoeuib(s) [UIFont fontWithName:@"SegoeUI-Bold" size:s]
     #define segoeuii(s) [UIFont fontWithName:@"SegoeUI-Italic" size:s]
     #define segoeuil(s) [UIFont fontWithName:@"SegoeUI-Light" size:s]
+    #define thaisans(s) [UIFont fontWithName:@"Kunlasatri" size:s]
+    #define thaisansb(s) [UIFont fontWithName:@"Kunlasatri-Bold" size:s]
+
 
 #endif

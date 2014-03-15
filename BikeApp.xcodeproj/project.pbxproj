@@ -44,10 +44,6 @@
 		1C0407EF18CB574100367777 /* urgentcall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078918CB574100367777 /* urgentcall.png */; };
 		1C0407F018CB574100367777 /* HOME.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078A18CB574100367777 /* HOME.png */; };
 		1C0407F118CB574100367777 /* info01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078B18CB574100367777 /* info01.png */; };
-		1C0407F218CB574100367777 /* hub_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078D18CB574100367777 /* hub_icon.png */; };
-		1C0407F318CB574100367777 /* hub_pic01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078E18CB574100367777 /* hub_pic01.png */; };
-		1C0407F418CB574100367777 /* tire_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04078F18CB574100367777 /* tire_icon.png */; };
-		1C0407F518CB574100367777 /* tire_pic01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079018CB574100367777 /* tire_pic01.png */; };
 		1C0407F618CB574100367777 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079218CB574100367777 /* error.png */; };
 		1C0407F718CB574100367777 /* KMUTT BICYCLE APPS.docx in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079318CB574100367777 /* KMUTT BICYCLE APPS.docx */; };
 		1C0407F818CB574100367777 /* KMUTT BICYCLE APPS.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079418CB574100367777 /* KMUTT BICYCLE APPS.pdf */; };
@@ -60,9 +56,6 @@
 		1C0407FF18CB574100367777 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079C18CB574100367777 /* Logo.png */; };
 		1C04080018CB574100367777 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079D18CB574100367777 /* twitter.png */; };
 		1C04080118CB574100367777 /* twitter_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04079E18CB574100367777 /* twitter_click.png */; };
-		1C04080218CB574100367777 /* bg_normal_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A018CB574100367777 /* bg_normal_page.png */; };
-		1C04080318CB574100367777 /* send_locationl.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A118CB574100367777 /* send_locationl.png */; };
-		1C04080418CB574100367777 /* urgent_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A218CB574100367777 /* urgent_call.png */; };
 		1C04080518CB574100367777 /* Notify.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A318CB574100367777 /* Notify.png */; };
 		1C04080618CB574100367777 /* Poster.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A418CB574100367777 /* Poster.png */; };
 		1C04080718CB574100367777 /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0407A618CB574100367777 /* cancel.png */; };
@@ -121,9 +114,13 @@
 		1C04089618CCC61B00367777 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C04089518CCC61B00367777 /* CoreLocation.framework */; };
 		1C04089818CCCF5F00367777 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C04089718CCCF5F00367777 /* MapKit.framework */; };
 		1C04089C18CCD35700367777 /* BreakViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C04089B18CCD35700367777 /* BreakViewController.m */; };
+		1C22644F18D1D4D700B731C7 /* cancel_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C22644D18D1D4D700B731C7 /* cancel_btn.png */; };
+		1C22645018D1D4D700B731C7 /* update_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C22644E18D1D4D700B731C7 /* update_btn.png */; };
+		1C22645218D1D4E200B731C7 /* gear_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C22645118D1D4E200B731C7 /* gear_setting.png */; };
 		1C2CA5DD18CE21380084AEA1 /* WheelTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CA5DC18CE21380084AEA1 /* WheelTabViewController.m */; };
 		1C2CA5E018CE21490084AEA1 /* HubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CA5DF18CE21490084AEA1 /* HubViewController.m */; };
 		1C2CA5E318CE21580084AEA1 /* TireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C2CA5E218CE21580084AEA1 /* TireViewController.m */; };
+		1C576EDB18D005480019AF3F /* thai.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C576EDA18D005480019AF3F /* thai.ttf */; };
 		1C6A791818C985A7005A2BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A791718C985A7005A2BC9 /* Foundation.framework */; };
 		1C6A791A18C985A7005A2BC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A791918C985A7005A2BC9 /* CoreGraphics.framework */; };
 		1C6A791C18C985A7005A2BC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C6A791B18C985A7005A2BC9 /* UIKit.framework */; };
@@ -140,6 +137,57 @@
 		1C6A794118C985A7005A2BC9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C6A793F18C985A7005A2BC9 /* InfoPlist.strings */; };
 		1C6A794318C985A7005A2BC9 /* BikeAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C6A794218C985A7005A2BC9 /* BikeAppTests.m */; };
 		1C80482718C9B5DF00AB1561 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C80482618C9B5DF00AB1561 /* Storyboard.storyboard */; };
+		1CF0DB3318D1EDAF00013827 /* gear_setting_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB3218D1EDAF00013827 /* gear_setting_white.png */; };
+		1CF0DB3618D1EFAA00013827 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB3518D1EFAA00013827 /* SettingsViewController.m */; };
+		1CF0DB3C18D1F78B00013827 /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB3918D1F78B00013827 /* MJPopupBackgroundView.m */; };
+		1CF0DB3D18D1F78B00013827 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB3B18D1F78B00013827 /* UIViewController+MJPopupViewController.m */; };
+		1CF0DB4018D202A800013827 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB3F18D202A800013827 /* FirstViewController.m */; };
+		1CF0DB4A18D204AA00013827 /* EEAnimationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB4218D204AA00013827 /* EEAnimationHandler.m */; };
+		1CF0DB4B18D204AA00013827 /* EEHUDResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB4418D204AA00013827 /* EEHUDResultView.m */; };
+		1CF0DB4C18D204AA00013827 /* EEHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB4618D204AA00013827 /* EEHUDView.m */; };
+		1CF0DB4D18D204AA00013827 /* EEProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB4918D204AA00013827 /* EEProgressView.m */; };
+		1CF0DB5118D21E5B00013827 /* thaib.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5018D21E2900013827 /* thaib.ttf */; };
+		1CF0DB5A18D228E800013827 /* maintain_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5218D228E800013827 /* maintain_disable.png */; };
+		1CF0DB5B18D228E800013827 /* maintain_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5318D228E800013827 /* maintain_normal.png */; };
+		1CF0DB5C18D228E800013827 /* tire_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5418D228E800013827 /* tire_icon.png */; };
+		1CF0DB5D18D228E800013827 /* hub_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5518D228E800013827 /* hub_icon.png */; };
+		1CF0DB5E18D228E800013827 /* a_01_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5618D228E800013827 /* a_01_01.png */; };
+		1CF0DB5F18D228E800013827 /* a_00.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5718D228E800013827 /* a_00.png */; };
+		1CF0DB6018D228E800013827 /* hub_pic01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5818D228E800013827 /* hub_pic01.png */; };
+		1CF0DB6118D228E800013827 /* tire_pic01.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB5918D228E800013827 /* tire_pic01.png */; };
+		1CF0DB6518D2395300013827 /* tire.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB6418D2395300013827 /* tire.txt */; };
+		1CF0DB6918D24E9000013827 /* hub.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB6818D24E9000013827 /* hub.txt */; };
+		1CF0DB6B18D254DA00013827 /* brake.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB6A18D254DA00013827 /* brake.png */; };
+		1CF0DB6D18D2552F00013827 /* break.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB6C18D2552F00013827 /* break.txt */; };
+		1CF0DB7018D258DA00013827 /* BreakTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB6F18D258DA00013827 /* BreakTabViewController.m */; };
+		1CF0DB7618D25B0500013827 /* GearTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7518D25B0500013827 /* GearTabViewController.m */; };
+		1CF0DB7918D25B4500013827 /* GearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7818D25B4500013827 /* GearViewController.m */; };
+		1CF0DB7B18D25C1D00013827 /* crank.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7A18D25C1D00013827 /* crank.txt */; };
+		1CF0DB7D18D25C7900013827 /* crank.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7C18D25C7900013827 /* crank.png */; };
+		1CF0DB8018D25CEB00013827 /* crank_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7E18D25CEB00013827 /* crank_icon.png */; };
+		1CF0DB8118D25CEB00013827 /* chain_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB7F18D25CEB00013827 /* chain_icon.png */; };
+		1CF0DB8418D25E8D00013827 /* ChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8318D25E8D00013827 /* ChainViewController.m */; };
+		1CF0DB8618D25F0D00013827 /* chain.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8518D25F0D00013827 /* chain.png */; };
+		1CF0DB8818D25F4200013827 /* chain.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8718D25F4200013827 /* chain.txt */; };
+		1CF0DB9018D2AA9300013827 /* saddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8A18D2AA9300013827 /* saddle.png */; };
+		1CF0DB9118D2AA9300013827 /* Magnet_Pedal.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8B18D2AA9300013827 /* Magnet_Pedal.png */; };
+		1CF0DB9218D2AA9300013827 /* HandleBars.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB8C18D2AA9300013827 /* HandleBars.png */; };
+		1CF0DB9918D2AAFA00013827 /* handle.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB9618D2AAFA00013827 /* handle.txt */; };
+		1CF0DB9A18D2AAFA00013827 /* paddle.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB9718D2AAFA00013827 /* paddle.txt */; };
+		1CF0DB9B18D2AAFA00013827 /* saddle.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DB9818D2AAFA00013827 /* saddle.txt */; };
+		1CF0DB9E18D2AF4400013827 /* PedalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DB9D18D2AF4400013827 /* PedalViewController.m */; };
+		1CF0DBA118D2AF4E00013827 /* SaddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DBA018D2AF4E00013827 /* SaddleViewController.m */; };
+		1CF0DBA418D2AF5900013827 /* HandleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DBA318D2AF5900013827 /* HandleViewController.m */; };
+		1CF0DBA718D2AF8400013827 /* PedalTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DBA618D2AF8400013827 /* PedalTabViewController.m */; };
+		1CF0DBAA18D2AF9800013827 /* SaddleTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DBA918D2AF9800013827 /* SaddleTabViewController.m */; };
+		1CF0DBAD18D2AFA700013827 /* HandleTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0DBAC18D2AFA700013827 /* HandleTabViewController.m */; };
+		1CF0DBBC18D2C2DE00013827 /* bg_normal_page.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB518D2C2DE00013827 /* bg_normal_page.png */; };
+		1CF0DBBD18D2C2DE00013827 /* send_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB618D2C2DE00013827 /* send_location.png */; };
+		1CF0DBBE18D2C2DE00013827 /* send_location_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB718D2C2DE00013827 /* send_location_click.png */; };
+		1CF0DBBF18D2C2DE00013827 /* urgent_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB818D2C2DE00013827 /* urgent_call.png */; };
+		1CF0DBC018D2C2DE00013827 /* urgentcall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB918D2C2DE00013827 /* urgentcall_click.png */; };
+		1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBA18D2C2DE00013827 /* vdocall.png */; };
+		1CF0DBC218D2C2DE00013827 /* vdocall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -191,10 +239,6 @@
 		1C04078918CB574100367777 /* urgentcall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgentcall.png; sourceTree = "<group>"; };
 		1C04078A18CB574100367777 /* HOME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HOME.png; sourceTree = "<group>"; };
 		1C04078B18CB574100367777 /* info01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info01.png; sourceTree = "<group>"; };
-		1C04078D18CB574100367777 /* hub_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hub_icon.png; sourceTree = "<group>"; };
-		1C04078E18CB574100367777 /* hub_pic01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hub_pic01.png; sourceTree = "<group>"; };
-		1C04078F18CB574100367777 /* tire_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tire_icon.png; sourceTree = "<group>"; };
-		1C04079018CB574100367777 /* tire_pic01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tire_pic01.png; sourceTree = "<group>"; };
 		1C04079218CB574100367777 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		1C04079318CB574100367777 /* KMUTT BICYCLE APPS.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KMUTT BICYCLE APPS.docx"; sourceTree = "<group>"; };
 		1C04079418CB574100367777 /* KMUTT BICYCLE APPS.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "KMUTT BICYCLE APPS.pdf"; sourceTree = "<group>"; };
@@ -207,9 +251,6 @@
 		1C04079C18CB574100367777 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		1C04079D18CB574100367777 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
 		1C04079E18CB574100367777 /* twitter_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_click.png; sourceTree = "<group>"; };
-		1C0407A018CB574100367777 /* bg_normal_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_normal_page.png; sourceTree = "<group>"; };
-		1C0407A118CB574100367777 /* send_locationl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_locationl.png; sourceTree = "<group>"; };
-		1C0407A218CB574100367777 /* urgent_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgent_call.png; sourceTree = "<group>"; };
 		1C0407A318CB574100367777 /* Notify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Notify.png; sourceTree = "<group>"; };
 		1C0407A418CB574100367777 /* Poster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Poster.png; sourceTree = "<group>"; };
 		1C0407A618CB574100367777 /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -283,12 +324,16 @@
 		1C04089718CCCF5F00367777 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1C04089A18CCD35700367777 /* BreakViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BreakViewController.h; sourceTree = "<group>"; };
 		1C04089B18CCD35700367777 /* BreakViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreakViewController.m; sourceTree = "<group>"; };
+		1C22644D18D1D4D700B731C7 /* cancel_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel_btn.png; sourceTree = "<group>"; };
+		1C22644E18D1D4D700B731C7 /* update_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = update_btn.png; sourceTree = "<group>"; };
+		1C22645118D1D4E200B731C7 /* gear_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_setting.png; sourceTree = "<group>"; };
 		1C2CA5DB18CE21380084AEA1 /* WheelTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WheelTabViewController.h; sourceTree = "<group>"; };
 		1C2CA5DC18CE21380084AEA1 /* WheelTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WheelTabViewController.m; sourceTree = "<group>"; };
 		1C2CA5DE18CE21490084AEA1 /* HubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HubViewController.h; sourceTree = "<group>"; };
 		1C2CA5DF18CE21490084AEA1 /* HubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HubViewController.m; sourceTree = "<group>"; };
 		1C2CA5E118CE21580084AEA1 /* TireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TireViewController.h; sourceTree = "<group>"; };
 		1C2CA5E218CE21580084AEA1 /* TireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TireViewController.m; sourceTree = "<group>"; };
+		1C576EDA18D005480019AF3F /* thai.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = thai.ttf; sourceTree = "<group>"; };
 		1C6A791418C985A7005A2BC9 /* BikeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BikeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C6A791718C985A7005A2BC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1C6A791918C985A7005A2BC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -308,6 +353,76 @@
 		1C6A794018C985A7005A2BC9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C6A794218C985A7005A2BC9 /* BikeAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BikeAppTests.m; sourceTree = "<group>"; };
 		1C80482618C9B5DF00AB1561 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		1CF0DB3218D1EDAF00013827 /* gear_setting_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_setting_white.png; sourceTree = "<group>"; };
+		1CF0DB3418D1EFAA00013827 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		1CF0DB3518D1EFAA00013827 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		1CF0DB3818D1F78B00013827 /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		1CF0DB3918D1F78B00013827 /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		1CF0DB3A18D1F78B00013827 /* UIViewController+MJPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MJPopupViewController.h"; sourceTree = "<group>"; };
+		1CF0DB3B18D1F78B00013827 /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
+		1CF0DB3E18D202A800013827 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		1CF0DB3F18D202A800013827 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1CF0DB4118D204AA00013827 /* EEAnimationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEAnimationHandler.h; sourceTree = "<group>"; };
+		1CF0DB4218D204AA00013827 /* EEAnimationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEAnimationHandler.m; sourceTree = "<group>"; };
+		1CF0DB4318D204AA00013827 /* EEHUDResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEHUDResultView.h; sourceTree = "<group>"; };
+		1CF0DB4418D204AA00013827 /* EEHUDResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEHUDResultView.m; sourceTree = "<group>"; };
+		1CF0DB4518D204AA00013827 /* EEHUDView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEHUDView.h; sourceTree = "<group>"; };
+		1CF0DB4618D204AA00013827 /* EEHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEHUDView.m; sourceTree = "<group>"; };
+		1CF0DB4718D204AA00013827 /* EEHUDViewConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEHUDViewConstants.h; sourceTree = "<group>"; };
+		1CF0DB4818D204AA00013827 /* EEProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EEProgressView.h; sourceTree = "<group>"; };
+		1CF0DB4918D204AA00013827 /* EEProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EEProgressView.m; sourceTree = "<group>"; };
+		1CF0DB5018D21E2900013827 /* thaib.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = thaib.ttf; sourceTree = "<group>"; };
+		1CF0DB5218D228E800013827 /* maintain_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maintain_disable.png; sourceTree = "<group>"; };
+		1CF0DB5318D228E800013827 /* maintain_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maintain_normal.png; sourceTree = "<group>"; };
+		1CF0DB5418D228E800013827 /* tire_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tire_icon.png; sourceTree = "<group>"; };
+		1CF0DB5518D228E800013827 /* hub_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hub_icon.png; sourceTree = "<group>"; };
+		1CF0DB5618D228E800013827 /* a_01_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a_01_01.png; sourceTree = "<group>"; };
+		1CF0DB5718D228E800013827 /* a_00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a_00.png; sourceTree = "<group>"; };
+		1CF0DB5818D228E800013827 /* hub_pic01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hub_pic01.png; sourceTree = "<group>"; };
+		1CF0DB5918D228E800013827 /* tire_pic01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tire_pic01.png; sourceTree = "<group>"; };
+		1CF0DB6418D2395300013827 /* tire.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tire.txt; sourceTree = "<group>"; };
+		1CF0DB6818D24E9000013827 /* hub.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hub.txt; sourceTree = "<group>"; };
+		1CF0DB6A18D254DA00013827 /* brake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brake.png; sourceTree = "<group>"; };
+		1CF0DB6C18D2552F00013827 /* break.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = break.txt; sourceTree = "<group>"; };
+		1CF0DB6E18D258DA00013827 /* BreakTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BreakTabViewController.h; sourceTree = "<group>"; };
+		1CF0DB6F18D258DA00013827 /* BreakTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreakTabViewController.m; sourceTree = "<group>"; };
+		1CF0DB7418D25B0500013827 /* GearTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearTabViewController.h; sourceTree = "<group>"; };
+		1CF0DB7518D25B0500013827 /* GearTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearTabViewController.m; sourceTree = "<group>"; };
+		1CF0DB7718D25B4500013827 /* GearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GearViewController.h; sourceTree = "<group>"; };
+		1CF0DB7818D25B4500013827 /* GearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GearViewController.m; sourceTree = "<group>"; };
+		1CF0DB7A18D25C1D00013827 /* crank.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = crank.txt; sourceTree = "<group>"; };
+		1CF0DB7C18D25C7900013827 /* crank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crank.png; sourceTree = "<group>"; };
+		1CF0DB7E18D25CEB00013827 /* crank_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crank_icon.png; sourceTree = "<group>"; };
+		1CF0DB7F18D25CEB00013827 /* chain_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chain_icon.png; sourceTree = "<group>"; };
+		1CF0DB8218D25E8D00013827 /* ChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChainViewController.h; sourceTree = "<group>"; };
+		1CF0DB8318D25E8D00013827 /* ChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChainViewController.m; sourceTree = "<group>"; };
+		1CF0DB8518D25F0D00013827 /* chain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chain.png; sourceTree = "<group>"; };
+		1CF0DB8718D25F4200013827 /* chain.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = chain.txt; sourceTree = "<group>"; };
+		1CF0DB8A18D2AA9300013827 /* saddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saddle.png; sourceTree = "<group>"; };
+		1CF0DB8B18D2AA9300013827 /* Magnet_Pedal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Magnet_Pedal.png; sourceTree = "<group>"; };
+		1CF0DB8C18D2AA9300013827 /* HandleBars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HandleBars.png; sourceTree = "<group>"; };
+		1CF0DB9618D2AAFA00013827 /* handle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = handle.txt; sourceTree = "<group>"; };
+		1CF0DB9718D2AAFA00013827 /* paddle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = paddle.txt; sourceTree = "<group>"; };
+		1CF0DB9818D2AAFA00013827 /* saddle.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = saddle.txt; sourceTree = "<group>"; };
+		1CF0DB9C18D2AF4400013827 /* PedalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PedalViewController.h; sourceTree = "<group>"; };
+		1CF0DB9D18D2AF4400013827 /* PedalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedalViewController.m; sourceTree = "<group>"; };
+		1CF0DB9F18D2AF4E00013827 /* SaddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaddleViewController.h; sourceTree = "<group>"; };
+		1CF0DBA018D2AF4E00013827 /* SaddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaddleViewController.m; sourceTree = "<group>"; };
+		1CF0DBA218D2AF5900013827 /* HandleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleViewController.h; sourceTree = "<group>"; };
+		1CF0DBA318D2AF5900013827 /* HandleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleViewController.m; sourceTree = "<group>"; };
+		1CF0DBA518D2AF8400013827 /* PedalTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PedalTabViewController.h; sourceTree = "<group>"; };
+		1CF0DBA618D2AF8400013827 /* PedalTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PedalTabViewController.m; sourceTree = "<group>"; };
+		1CF0DBA818D2AF9800013827 /* SaddleTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaddleTabViewController.h; sourceTree = "<group>"; };
+		1CF0DBA918D2AF9800013827 /* SaddleTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaddleTabViewController.m; sourceTree = "<group>"; };
+		1CF0DBAB18D2AFA700013827 /* HandleTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandleTabViewController.h; sourceTree = "<group>"; };
+		1CF0DBAC18D2AFA700013827 /* HandleTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandleTabViewController.m; sourceTree = "<group>"; };
+		1CF0DBB518D2C2DE00013827 /* bg_normal_page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_normal_page.png; sourceTree = "<group>"; };
+		1CF0DBB618D2C2DE00013827 /* send_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_location.png; sourceTree = "<group>"; };
+		1CF0DBB718D2C2DE00013827 /* send_location_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send_location_click.png; sourceTree = "<group>"; };
+		1CF0DBB818D2C2DE00013827 /* urgent_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgent_call.png; sourceTree = "<group>"; };
+		1CF0DBB918D2C2DE00013827 /* urgentcall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgentcall_click.png; sourceTree = "<group>"; };
+		1CF0DBBA18D2C2DE00013827 /* vdocall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall.png; sourceTree = "<group>"; };
+		1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall_click.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +470,10 @@
 				1C04089018CC782600367777 /* WelcomeViewController.m */,
 				1C04089218CCC46300367777 /* NotifyViewController.h */,
 				1C04089318CCC46300367777 /* NotifyViewController.m */,
+				1CF0DB3418D1EFAA00013827 /* SettingsViewController.h */,
+				1CF0DB3518D1EFAA00013827 /* SettingsViewController.m */,
+				1CF0DB3E18D202A800013827 /* FirstViewController.h */,
+				1CF0DB3F18D202A800013827 /* FirstViewController.m */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -362,6 +481,8 @@
 		1C04076118CB574100367777 /* UIBikeApps */ = {
 			isa = PBXGroup;
 			children = (
+				1CF0DB3218D1EDAF00013827 /* gear_setting_white.png */,
+				1C22645118D1D4E200B731C7 /* gear_setting.png */,
 				1C04086818CBA4F800367777 /* profile_test.jpg */,
 				1C04076218CB574100367777 /* achievments.png */,
 				1C04076318CB574100367777 /* Archievments */,
@@ -378,8 +499,8 @@
 				1C04079118CB574100367777 /* inputmile */,
 				1C04079318CB574100367777 /* KMUTT BICYCLE APPS.docx */,
 				1C04079418CB574100367777 /* KMUTT BICYCLE APPS.pdf */,
+				1CF0DBB418D2C2DE00013827 /* nortify */,
 				1C04079518CB574100367777 /* Login */,
-				1C04079F18CB574100367777 /* nortify */,
 				1C0407A318CB574100367777 /* Notify.png */,
 				1C0407A418CB574100367777 /* Poster.png */,
 				1C0407A518CB574100367777 /* welcome */,
@@ -447,6 +568,8 @@
 		1C04077718CB574100367777 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				1C576EDA18D005480019AF3F /* thai.ttf */,
+				1CF0DB5018D21E2900013827 /* thaib.ttf */,
 				1C04077818CB574100367777 /* Kunlasatri-Bold.ttf */,
 				1C04077918CB574100367777 /* Kunlasatri-Light.ttf */,
 				1C04077A18CB574100367777 /* Kunlasatri.ttf */,
@@ -474,10 +597,22 @@
 		1C04078C18CB574100367777 /* infomation_page */ = {
 			isa = PBXGroup;
 			children = (
-				1C04078D18CB574100367777 /* hub_icon.png */,
-				1C04078E18CB574100367777 /* hub_pic01.png */,
-				1C04078F18CB574100367777 /* tire_icon.png */,
-				1C04079018CB574100367777 /* tire_pic01.png */,
+				1CF0DB8A18D2AA9300013827 /* saddle.png */,
+				1CF0DB8B18D2AA9300013827 /* Magnet_Pedal.png */,
+				1CF0DB8C18D2AA9300013827 /* HandleBars.png */,
+				1CF0DB8518D25F0D00013827 /* chain.png */,
+				1CF0DB7E18D25CEB00013827 /* crank_icon.png */,
+				1CF0DB7F18D25CEB00013827 /* chain_icon.png */,
+				1CF0DB7C18D25C7900013827 /* crank.png */,
+				1CF0DB5218D228E800013827 /* maintain_disable.png */,
+				1CF0DB5318D228E800013827 /* maintain_normal.png */,
+				1CF0DB6A18D254DA00013827 /* brake.png */,
+				1CF0DB5418D228E800013827 /* tire_icon.png */,
+				1CF0DB5518D228E800013827 /* hub_icon.png */,
+				1CF0DB5618D228E800013827 /* a_01_01.png */,
+				1CF0DB5718D228E800013827 /* a_00.png */,
+				1CF0DB5818D228E800013827 /* hub_pic01.png */,
+				1CF0DB5918D228E800013827 /* tire_pic01.png */,
 			);
 			path = infomation_page;
 			sourceTree = "<group>";
@@ -485,6 +620,8 @@
 		1C04079118CB574100367777 /* inputmile */ = {
 			isa = PBXGroup;
 			children = (
+				1C22644D18D1D4D700B731C7 /* cancel_btn.png */,
+				1C22644E18D1D4D700B731C7 /* update_btn.png */,
 				1C04079218CB574100367777 /* error.png */,
 			);
 			path = inputmile;
@@ -504,16 +641,6 @@
 				1C04079E18CB574100367777 /* twitter_click.png */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		1C04079F18CB574100367777 /* nortify */ = {
-			isa = PBXGroup;
-			children = (
-				1C0407A018CB574100367777 /* bg_normal_page.png */,
-				1C0407A118CB574100367777 /* send_locationl.png */,
-				1C0407A218CB574100367777 /* urgent_call.png */,
-			);
-			path = nortify;
 			sourceTree = "<group>";
 		};
 		1C0407A518CB574100367777 /* welcome */ = {
@@ -569,6 +696,11 @@
 		1C04083118CB5E2900367777 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				1CF0DB4E18D204AF00013827 /* EEHUD */,
+				1CF0DB3818D1F78B00013827 /* MJPopupBackgroundView.h */,
+				1CF0DB3918D1F78B00013827 /* MJPopupBackgroundView.m */,
+				1CF0DB3A18D1F78B00013827 /* UIViewController+MJPopupViewController.h */,
+				1CF0DB3B18D1F78B00013827 /* UIViewController+MJPopupViewController.m */,
 				1C04087418CBB3C800367777 /* AMProgressView */,
 				1C04086A18CBA73800367777 /* UIImage-categories */,
 				1C04084E18CB834A00367777 /* InfinitePagingView.h */,
@@ -617,14 +749,12 @@
 		1C04089918CCD33D00367777 /* Status */ = {
 			isa = PBXGroup;
 			children = (
-				1C04089A18CCD35700367777 /* BreakViewController.h */,
-				1C04089B18CCD35700367777 /* BreakViewController.m */,
-				1C2CA5DB18CE21380084AEA1 /* WheelTabViewController.h */,
-				1C2CA5DC18CE21380084AEA1 /* WheelTabViewController.m */,
-				1C2CA5DE18CE21490084AEA1 /* HubViewController.h */,
-				1C2CA5DF18CE21490084AEA1 /* HubViewController.m */,
-				1C2CA5E118CE21580084AEA1 /* TireViewController.h */,
-				1C2CA5E218CE21580084AEA1 /* TireViewController.m */,
+				1CF0DBAE18D2AFC500013827 /* Gear */,
+				1CF0DBAF18D2AFCD00013827 /* Wheel */,
+				1CF0DBB018D2AFD700013827 /* Break */,
+				1CF0DBB118D2AFF100013827 /* Pedal */,
+				1CF0DBB218D2AFFA00013827 /* Saddle */,
+				1CF0DBB318D2B00000013827 /* Handle */,
 			);
 			name = Status;
 			sourceTree = "<group>";
@@ -665,6 +795,7 @@
 		1C6A791F18C985A7005A2BC9 /* BikeApp */ = {
 			isa = PBXGroup;
 			children = (
+				1CF0DB6318D2394400013827 /* txt */,
 				1C04083118CB5E2900367777 /* Library */,
 				1C04076118CB574100367777 /* UIBikeApps */,
 				1C04075D18CB56F900367777 /* Class */,
@@ -705,6 +836,121 @@
 				1C6A793F18C985A7005A2BC9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1CF0DB4E18D204AF00013827 /* EEHUD */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DB4118D204AA00013827 /* EEAnimationHandler.h */,
+				1CF0DB4218D204AA00013827 /* EEAnimationHandler.m */,
+				1CF0DB4318D204AA00013827 /* EEHUDResultView.h */,
+				1CF0DB4418D204AA00013827 /* EEHUDResultView.m */,
+				1CF0DB4518D204AA00013827 /* EEHUDView.h */,
+				1CF0DB4618D204AA00013827 /* EEHUDView.m */,
+				1CF0DB4718D204AA00013827 /* EEHUDViewConstants.h */,
+				1CF0DB4818D204AA00013827 /* EEProgressView.h */,
+				1CF0DB4918D204AA00013827 /* EEProgressView.m */,
+			);
+			name = EEHUD;
+			sourceTree = "<group>";
+		};
+		1CF0DB6318D2394400013827 /* txt */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DB8718D25F4200013827 /* chain.txt */,
+				1CF0DB7A18D25C1D00013827 /* crank.txt */,
+				1CF0DB6C18D2552F00013827 /* break.txt */,
+				1CF0DB6818D24E9000013827 /* hub.txt */,
+				1CF0DB9618D2AAFA00013827 /* handle.txt */,
+				1CF0DB9718D2AAFA00013827 /* paddle.txt */,
+				1CF0DB9818D2AAFA00013827 /* saddle.txt */,
+				1CF0DB6418D2395300013827 /* tire.txt */,
+			);
+			name = txt;
+			sourceTree = "<group>";
+		};
+		1CF0DBAE18D2AFC500013827 /* Gear */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DB7418D25B0500013827 /* GearTabViewController.h */,
+				1CF0DB7518D25B0500013827 /* GearTabViewController.m */,
+				1CF0DB7718D25B4500013827 /* GearViewController.h */,
+				1CF0DB7818D25B4500013827 /* GearViewController.m */,
+				1CF0DB8218D25E8D00013827 /* ChainViewController.h */,
+				1CF0DB8318D25E8D00013827 /* ChainViewController.m */,
+			);
+			name = Gear;
+			sourceTree = "<group>";
+		};
+		1CF0DBAF18D2AFCD00013827 /* Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				1C2CA5DB18CE21380084AEA1 /* WheelTabViewController.h */,
+				1C2CA5DC18CE21380084AEA1 /* WheelTabViewController.m */,
+				1C2CA5DE18CE21490084AEA1 /* HubViewController.h */,
+				1C2CA5DF18CE21490084AEA1 /* HubViewController.m */,
+				1C2CA5E118CE21580084AEA1 /* TireViewController.h */,
+				1C2CA5E218CE21580084AEA1 /* TireViewController.m */,
+			);
+			name = Wheel;
+			sourceTree = "<group>";
+		};
+		1CF0DBB018D2AFD700013827 /* Break */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DB6E18D258DA00013827 /* BreakTabViewController.h */,
+				1CF0DB6F18D258DA00013827 /* BreakTabViewController.m */,
+				1C04089A18CCD35700367777 /* BreakViewController.h */,
+				1C04089B18CCD35700367777 /* BreakViewController.m */,
+			);
+			name = Break;
+			sourceTree = "<group>";
+		};
+		1CF0DBB118D2AFF100013827 /* Pedal */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DBA518D2AF8400013827 /* PedalTabViewController.h */,
+				1CF0DBA618D2AF8400013827 /* PedalTabViewController.m */,
+				1CF0DB9C18D2AF4400013827 /* PedalViewController.h */,
+				1CF0DB9D18D2AF4400013827 /* PedalViewController.m */,
+			);
+			name = Pedal;
+			sourceTree = "<group>";
+		};
+		1CF0DBB218D2AFFA00013827 /* Saddle */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DBA818D2AF9800013827 /* SaddleTabViewController.h */,
+				1CF0DBA918D2AF9800013827 /* SaddleTabViewController.m */,
+				1CF0DB9F18D2AF4E00013827 /* SaddleViewController.h */,
+				1CF0DBA018D2AF4E00013827 /* SaddleViewController.m */,
+			);
+			name = Saddle;
+			sourceTree = "<group>";
+		};
+		1CF0DBB318D2B00000013827 /* Handle */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DBAB18D2AFA700013827 /* HandleTabViewController.h */,
+				1CF0DBAC18D2AFA700013827 /* HandleTabViewController.m */,
+				1CF0DBA218D2AF5900013827 /* HandleViewController.h */,
+				1CF0DBA318D2AF5900013827 /* HandleViewController.m */,
+			);
+			name = Handle;
+			sourceTree = "<group>";
+		};
+		1CF0DBB418D2C2DE00013827 /* nortify */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0DBB518D2C2DE00013827 /* bg_normal_page.png */,
+				1CF0DBB618D2C2DE00013827 /* send_location.png */,
+				1CF0DBB718D2C2DE00013827 /* send_location_click.png */,
+				1CF0DBB818D2C2DE00013827 /* urgent_call.png */,
+				1CF0DBB918D2C2DE00013827 /* urgentcall_click.png */,
+				1CF0DBBA18D2C2DE00013827 /* vdocall.png */,
+				1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */,
+			);
+			path = nortify;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -751,9 +997,12 @@
 		1C6A790C18C985A7005A2BC9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Patsicha Tongteeka";
 				TargetAttributes = {
+					1C6A791318C985A7005A2BC9 = {
+						DevelopmentTeam = 6CF7588U3C;
+					};
 					1C6A793318C985A7005A2BC9 = {
 						TestTargetID = 1C6A791318C985A7005A2BC9;
 					};
@@ -785,7 +1034,6 @@
 				1C04082518CB574100367777 /* saddle_click.png in Resources */,
 				1C0407D618CB574100367777 /* 50km.png in Resources */,
 				1C0407D718CB574100367777 /* 50km_d.png in Resources */,
-				1C04080418CB574100367777 /* urgent_call.png in Resources */,
 				1C04080F18CB574100367777 /* your_bike03.png in Resources */,
 				1C04081A18CB574100367777 /* gear_fix.png in Resources */,
 				1C04080818CB574100367777 /* checkout.png in Resources */,
@@ -793,18 +1041,25 @@
 				1C0407F118CB574100367777 /* info01.png in Resources */,
 				1C0407CF18CB574100367777 /* arch_bar.png in Resources */,
 				1C04082418CB574100367777 /* pedal_good.png in Resources */,
+				1CF0DB7D18D25C7900013827 /* crank.png in Resources */,
+				1CF0DB5A18D228E800013827 /* maintain_disable.png in Resources */,
 				1C0407D018CB574100367777 /* 100km.png in Resources */,
 				1C04080518CB574100367777 /* Notify.png in Resources */,
-				1C0407F218CB574100367777 /* hub_icon.png in Resources */,
+				1CF0DB8118D25CEB00013827 /* chain_icon.png in Resources */,
 				1C04082C18CB574100367777 /* wheel_good.png in Resources */,
 				1C04081518CB574100367777 /* break_click2.png in Resources */,
+				1CF0DB8818D25F4200013827 /* chain.txt in Resources */,
+				1CF0DB9118D2AA9300013827 /* Magnet_Pedal.png in Resources */,
 				1C0407ED18CB574100367777 /* front01.png in Resources */,
 				1C0407D918CB574100367777 /* dotscroll.png in Resources */,
 				1C04086918CBA4F800367777 /* profile_test.jpg in Resources */,
+				1CF0DBBC18D2C2DE00013827 /* bg_normal_page.png in Resources */,
 				1C0407DD18CB574100367777 /* content02.png in Resources */,
+				1CF0DB5C18D228E800013827 /* tire_icon.png in Resources */,
 				1C04080A18CB574100367777 /* welcome01.png in Resources */,
 				1C04082118CB574100367777 /* pedal_click.png in Resources */,
 				1C04082318CB574100367777 /* pedal_fix.png in Resources */,
+				1CF0DB6918D24E9000013827 /* hub.txt in Resources */,
 				1C0407DC18CB574100367777 /* content01.png in Resources */,
 				1C04081C18CB574100367777 /* handle_click.png in Resources */,
 				1C04081718CB574100367777 /* break_good.png in Resources */,
@@ -812,17 +1067,26 @@
 				1C0407E218CB574100367777 /* segoeui.ttf in Resources */,
 				1C0407F018CB574100367777 /* HOME.png in Resources */,
 				1C0407F718CB574100367777 /* KMUTT BICYCLE APPS.docx in Resources */,
+				1C576EDB18D005480019AF3F /* thai.ttf in Resources */,
 				1C04080718CB574100367777 /* cancel.png in Resources */,
 				1C6A792418C985A7005A2BC9 /* InfoPlist.strings in Resources */,
+				1CF0DB6518D2395300013827 /* tire.txt in Resources */,
 				1C0407CE18CB574100367777 /* achievments.png in Resources */,
 				1C04082018CB574100367777 /* icon_click.psd in Resources */,
+				1CF0DBBF18D2C2DE00013827 /* urgent_call.png in Resources */,
+				1C22645018D1D4D700B731C7 /* update_btn.png in Resources */,
+				1CF0DB8018D25CEB00013827 /* crank_icon.png in Resources */,
 				1C0407FC18CB574100367777 /* forget_pw.png in Resources */,
 				1C0407FF18CB574100367777 /* Logo.png in Resources */,
 				1C0407D218CB574100367777 /* 10km.png in Resources */,
+				1C22645218D1D4E200B731C7 /* gear_setting.png in Resources */,
 				1C04082B18CB574100367777 /* wheel_fix.png in Resources */,
+				1CF0DB5118D21E5B00013827 /* thaib.ttf in Resources */,
 				1C04080118CB574100367777 /* twitter_click.png in Resources */,
 				1C0407DB18CB574100367777 /* bg_Login_page.png in Resources */,
 				1C0407D118CB574100367777 /* 100km_d.png in Resources */,
+				1CF0DB7B18D25C1D00013827 /* crank.txt in Resources */,
+				1CF0DBC218D2C2DE00013827 /* vdocall_click.png in Resources */,
 				1C0407E918CB574100367777 /* tahomabd.ttf in Resources */,
 				1C0407EE18CB574100367777 /* 189_189_image_bg.png in Resources */,
 				1C0407E818CB574100367777 /* tahoma.ttf in Resources */,
@@ -832,42 +1096,57 @@
 				1C04081E18CB574100367777 /* handle_fix.png in Resources */,
 				1C0407EF18CB574100367777 /* urgentcall.png in Resources */,
 				1C04081D18CB574100367777 /* handle_click2.png in Resources */,
+				1CF0DB5F18D228E800013827 /* a_00.png in Resources */,
 				1C04082A18CB574100367777 /* wheel_click2.png in Resources */,
 				1C0407EB18CB574100367777 /* fonts_build02.png in Resources */,
 				1C0407FA18CB574100367777 /* facebook.png in Resources */,
 				1C0407D518CB574100367777 /* 20km_d.png in Resources */,
 				1C04081418CB574100367777 /* break_click.png in Resources */,
 				1C0407E418CB574100367777 /* segoeuii.ttf in Resources */,
+				1CF0DB6D18D2552F00013827 /* break.txt in Resources */,
+				1CF0DB5E18D228E800013827 /* a_01_01.png in Resources */,
+				1CF0DB6B18D254DA00013827 /* brake.png in Resources */,
 				1C04082618CB574100367777 /* saddle_click2.png in Resources */,
 				1C04081318CB574100367777 /* your_bike07.png in Resources */,
 				1C0407DA18CB574100367777 /* dotscroll_d.png in Resources */,
 				1C0407F818CB574100367777 /* KMUTT BICYCLE APPS.pdf in Resources */,
 				1C0407E318CB574100367777 /* segoeuib.ttf in Resources */,
+				1CF0DB6118D228E800013827 /* tire_pic01.png in Resources */,
 				1C0407E618CB574100367777 /* segoeuiz.ttf in Resources */,
 				1C0407D418CB574100367777 /* 20km.png in Resources */,
 				1C0407E718CB574100367777 /* seguisb.ttf in Resources */,
+				1CF0DB9A18D2AAFA00013827 /* paddle.txt in Resources */,
 				1C04081818CB574100367777 /* gear_click.png in Resources */,
 				1C6A792F18C985A7005A2BC9 /* Images.xcassets in Resources */,
-				1C0407F318CB574100367777 /* hub_pic01.png in Resources */,
 				1C0407DF18CB574100367777 /* Kunlasatri-Bold.ttf in Resources */,
 				1C0407D818CB574100367777 /* arch_icon.psd in Resources */,
+				1C22644F18D1D4D700B731C7 /* cancel_btn.png in Resources */,
 				1C04080918CB574100367777 /* pw_dot.png in Resources */,
 				1C04081918CB574100367777 /* gear_click2.png in Resources */,
-				1C04080218CB574100367777 /* bg_normal_page.png in Resources */,
 				1C04080E18CB574100367777 /* your_bike02.png in Resources */,
+				1CF0DB9018D2AA9300013827 /* saddle.png in Resources */,
+				1CF0DB3318D1EDAF00013827 /* gear_setting_white.png in Resources */,
+				1CF0DB9218D2AA9300013827 /* HandleBars.png in Resources */,
 				1C04081618CB574100367777 /* break_fix.png in Resources */,
+				1CF0DBC018D2C2DE00013827 /* urgentcall_click.png in Resources */,
 				1C0407DE18CB574100367777 /* content03.png in Resources */,
 				1C04082918CB574100367777 /* wheel_click.png in Resources */,
+				1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */,
 				1C0407F918CB574100367777 /* coca_cola.png in Resources */,
-				1C04080318CB574100367777 /* send_locationl.png in Resources */,
+				1CF0DBBD18D2C2DE00013827 /* send_location.png in Resources */,
 				1C04082818CB574100367777 /* saddle_good.png in Resources */,
-				1C0407F418CB574100367777 /* tire_icon.png in Resources */,
+				1CF0DB6018D228E800013827 /* hub_pic01.png in Resources */,
+				1CF0DB8618D25F0D00013827 /* chain.png in Resources */,
+				1CF0DB5B18D228E800013827 /* maintain_normal.png in Resources */,
 				1C04080D18CB574100367777 /* your_bike01.png in Resources */,
 				1C04080C18CB574100367777 /* welcome03.png in Resources */,
 				1C0407E518CB574100367777 /* segoeuil.ttf in Resources */,
 				1C0407F618CB574100367777 /* error.png in Resources */,
 				1C0407EC18CB574100367777 /* fonts_build03.png in Resources */,
+				1CF0DBBE18D2C2DE00013827 /* send_location_click.png in Resources */,
+				1CF0DB5D18D228E800013827 /* hub_icon.png in Resources */,
 				1C04081118CB574100367777 /* your_bike05.png in Resources */,
+				1CF0DB9918D2AAFA00013827 /* handle.txt in Resources */,
 				1C0407E118CB574100367777 /* Kunlasatri.ttf in Resources */,
 				1C04081018CB574100367777 /* your_bike04.png in Resources */,
 				1C0407EA18CB574100367777 /* fonts_build01.png in Resources */,
@@ -876,9 +1155,9 @@
 				1C04081F18CB574100367777 /* handle_good.png in Resources */,
 				1C80482718C9B5DF00AB1561 /* Storyboard.storyboard in Resources */,
 				1C0407FE18CB574100367777 /* login.png in Resources */,
+				1CF0DB9B18D2AAFA00013827 /* saddle.txt in Resources */,
 				1C04082718CB574100367777 /* saddle_fix.png in Resources */,
 				1C04080018CB574100367777 /* twitter.png in Resources */,
-				1C0407F518CB574100367777 /* tire_pic01.png in Resources */,
 				1C04080B18CB574100367777 /* welcome02.png in Resources */,
 				1C0407FD18CB574100367777 /* idpwbox.png in Resources */,
 			);
@@ -899,26 +1178,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF0DB7918D25B4500013827 /* GearViewController.m in Sources */,
 				1C04084D18CB5F2C00367777 /* TPKeyboardAvoidingScrollView.m in Sources */,
+				1CF0DB4B18D204AA00013827 /* EEHUDResultView.m in Sources */,
+				1CF0DB3D18D1F78B00013827 /* UIViewController+MJPopupViewController.m in Sources */,
 				1C04087318CBA73800367777 /* UIImage+RoundedCorner.m in Sources */,
 				1C04085618CB9A4700367777 /* PagerViewController.m in Sources */,
 				1C04089418CCC46300367777 /* NotifyViewController.m in Sources */,
+				1CF0DBA718D2AF8400013827 /* PedalTabViewController.m in Sources */,
 				1C04076018CB570800367777 /* LoginViewController.m in Sources */,
+				1CF0DB7618D25B0500013827 /* GearTabViewController.m in Sources */,
 				1C6A792A18C985A7005A2BC9 /* AppDelegate.m in Sources */,
+				1CF0DB4018D202A800013827 /* FirstViewController.m in Sources */,
+				1CF0DB4A18D204AA00013827 /* EEAnimationHandler.m in Sources */,
 				1C04086418CBA08700367777 /* UpdateViewController.m in Sources */,
 				1C04086118CBA07D00367777 /* StatusViewController.m in Sources */,
+				1CF0DB3C18D1F78B00013827 /* MJPopupBackgroundView.m in Sources */,
+				1CF0DB4C18D204AA00013827 /* EEHUDView.m in Sources */,
 				1C04085D18CB9CE700367777 /* YourPageViewController.m in Sources */,
 				1C04089C18CCD35700367777 /* BreakViewController.m in Sources */,
 				1C04088818CBB3C800367777 /* AMProgressViewGradient.m in Sources */,
+				1CF0DB9E18D2AF4400013827 /* PedalViewController.m in Sources */,
+				1CF0DB3618D1EFAA00013827 /* SettingsViewController.m in Sources */,
+				1CF0DBA118D2AF4E00013827 /* SaddleViewController.m in Sources */,
+				1CF0DBAA18D2AF9800013827 /* SaddleTabViewController.m in Sources */,
+				1CF0DBA418D2AF5900013827 /* HandleViewController.m in Sources */,
 				1C04085018CB834A00367777 /* InfinitePagingView.m in Sources */,
 				1C6A792618C985A7005A2BC9 /* main.m in Sources */,
 				1C04086718CBA0B300367777 /* ProfileViewController.m in Sources */,
 				1C2CA5DD18CE21380084AEA1 /* WheelTabViewController.m in Sources */,
 				1C6A792D18C985A7005A2BC9 /* BikeApp.xcdatamodeld in Sources */,
+				1CF0DBAD18D2AFA700013827 /* HandleTabViewController.m in Sources */,
 				1C04089118CC782600367777 /* WelcomeViewController.m in Sources */,
 				1C04087118CBA73800367777 /* UIImage+Alpha.m in Sources */,
+				1CF0DB4D18D204AA00013827 /* EEProgressView.m in Sources */,
+				1CF0DB8418D25E8D00013827 /* ChainViewController.m in Sources */,
 				1C04088718CBB3C800367777 /* AMProgressView.m in Sources */,
 				1C2CA5E018CE21490084AEA1 /* HubViewController.m in Sources */,
+				1CF0DB7018D258DA00013827 /* BreakTabViewController.m in Sources */,
 				1C2CA5E318CE21580084AEA1 /* TireViewController.m in Sources */,
 				1C04087218CBA73800367777 /* UIImage+Resize.m in Sources */,
 			);
@@ -966,7 +1263,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1005,7 +1301,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1039,10 +1334,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikeApp/BikeApp-Prefix.pch";
 				INFOPLIST_FILE = "BikeApp/BikeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1052,10 +1350,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BikeApp/BikeApp-Prefix.pch";
 				INFOPLIST_FILE = "BikeApp/BikeApp-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1063,7 +1364,6 @@
 		1C6A794A18C985A7005A2BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BikeApp.app/BikeApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1086,7 +1386,6 @@
 		1C6A794B18C985A7005A2BC9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BikeApp.app/BikeApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

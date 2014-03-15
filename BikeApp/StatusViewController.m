@@ -8,6 +8,11 @@
 
 #import "StatusViewController.h"
 #import "WheelTabViewController.h"
+#import "BreakTabViewController.h"
+#import "GearTabViewController.h"
+#import "PedalTabViewController.h"
+#import "SaddleTabViewController.h"
+#import "HandleTabViewController.h"
 
 @interface StatusViewController ()
 {
@@ -41,6 +46,9 @@
     UIImage *handle_click;
     UIImage *handle_click2;
     UIImage *handle_fix;
+    
+    //NSDictionary *Durability;
+    
 }
 @end
 
@@ -59,23 +67,13 @@
 {
     
     [super viewDidLoad];
-
+    
+    
     lblTxt.font = segoeui(14);
     
-    gear_good = [UIImage imageNamed:@"gear_good.png"];
-    gear_click = [UIImage imageNamed:@"gear_click.png"];
-    gear_click2 = [UIImage imageNamed:@"gear_click2.png"];
-    gear_fix = [UIImage imageNamed:@"gear_fix.png"];
     
-    wheel_good = [UIImage imageNamed:@"wheel_good.png"];
-    wheel_click = [UIImage imageNamed:@"wheel_click.png"];
-    wheel_click2 = [UIImage imageNamed:@"wheel_click2.png"];
-    wheel_fix = [UIImage imageNamed:@"wheel_fix.png"];
     
-    break_good = [UIImage imageNamed:@"break_good.png"];
-    break_click = [UIImage imageNamed:@"break_click.png"];
-    break_click2 = [UIImage imageNamed:@"break_click2.png"];
-    break_fix = [UIImage imageNamed:@"break_fix.png"];
+    
     
     saddle_good = [UIImage imageNamed:@"saddle_good.png"];
     saddle_click = [UIImage imageNamed:@"saddle_click.png"];
@@ -91,6 +89,49 @@
     handle_click = [UIImage imageNamed:@"handle_click.png"];
     handle_click2 = [UIImage imageNamed:@"handle_click2.png"];
     handle_fix = [UIImage imageNamed:@"handle_fix.png"];
+    
+    
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *Durability = [prefs objectForKey:@"Durability"];
+    NSLog(@"%@",Durability);
+    if([[Durability objectForKey:@"gear"] isEqualToString:@"B"])
+    {
+        gear_click = [UIImage imageNamed:@"gear_click2.png"];
+        gear_good = [UIImage imageNamed:@"gear_fix.png"];
+    }else{
+        gear_good = [UIImage imageNamed:@"gear_good.png"];
+        gear_click = [UIImage imageNamed:@"gear_click.png"];
+    }
+    if([[Durability objectForKey:@"wheel"] isEqualToString:@"B"])
+    {
+        wheel_click = [UIImage imageNamed:@"wheel_click2.png"];
+        wheel_good = [UIImage imageNamed:@"wheel_fix.png"];
+    }else{
+        wheel_good = [UIImage imageNamed:@"wheel_good.png"];
+        wheel_click = [UIImage imageNamed:@"wheel_click.png"];
+    }
+    
+    if([[Durability objectForKey:@"break"] isEqualToString:@"B"])
+    {
+        break_good = [UIImage imageNamed:@"break_fix.png"];
+        break_click = [UIImage imageNamed:@"break_click2.png"];
+    }else{
+        break_good = [UIImage imageNamed:@"break_good.png"];
+        break_click = [UIImage imageNamed:@"break_click.png"];
+    }
+    
+    
+    
+    
+    [btnGear setBackgroundImage:gear_good forState:UIControlStateNormal];
+    [btnWheel setBackgroundImage:wheel_good forState:UIControlStateNormal];
+    [btnBreak setBackgroundImage:break_good forState:UIControlStateNormal];
+    [btnSaddle setBackgroundImage:saddle_good forState:UIControlStateNormal];
+    [btnPedal setBackgroundImage:pedal_good forState:UIControlStateNormal];
+    [btnHandle setBackgroundImage:handle_good forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,14 +195,55 @@
         [btnHandle setBackgroundImage:handle_good forState:UIControlStateNormal];
         lblTxt.text = @"";
         
+        if([lastSelected isEqualToString:@"Gear"])
+        {
+            GearTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Gear"];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+        }
+        
         if([lastSelected isEqualToString:@"Wheel"])
         {
             WheelTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Wheel"];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+        }
+        if([lastSelected isEqualToString:@"Break"])
+        {
+            BreakTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Break"];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+        }
+        if([lastSelected isEqualToString:@"Pedal"])
+        {
+            PedalTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Pedal"];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+        }
+        if([lastSelected isEqualToString:@"Saddle"])
+        {
+            SaddleTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Saddle"];
+            svc.delegate = self;
+            [self presentViewController:svc animated:YES completion:nil];
+        }
+        if([lastSelected isEqualToString:@"Handle"])
+        {
+            HandleTabViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Handle"];
+            svc.delegate = self;
             [self presentViewController:svc animated:YES completion:nil];
         }
     }
     
     lastSelected = lblTxt.text;
+}
+
+- (void)test
+{
+    NSLog(@"delegate");
+    NSLog(@"Button  clicked.");
+    
+    [self viewDidAppear:YES];
+    [[self parentViewController] viewDidLoad];
 }
 
 @end
