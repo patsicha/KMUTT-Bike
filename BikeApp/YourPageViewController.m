@@ -32,6 +32,8 @@
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSDictionary *Durability = [prefs objectForKey:@"Durability"];
+    NSMutableArray *userInfo = [[NSMutableArray alloc] init];
+    userInfo = [prefs objectForKey:@"MemberInfo"];
     
     if(Durability == nil)
     {
@@ -64,6 +66,14 @@
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"status"]];
 	[self addChildViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"update"]];
     
+    txtNo.text = [userInfo valueForKey:@"student_id"]; // student_id
+    txtName.text = [userInfo valueForKey:@"student_name_en"]; // student_name_en
+    txtLastname.text = [userInfo valueForKey:@"student_surname_en"]; // student_surname_en
+    txtBikeNo.text = _bikeCode;
+    txtDurability.text = [[NSString alloc] initWithFormat:@"%.0f%%",durability];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"student_picture"]]]];
+    self.imageView.image = image;
+    
     self.imageView.image = [self.imageView.image resizedImageWithContentMode:UIViewContentModeScaleAspectFill bounds:CGSizeMake(100, 100) interpolationQuality:kCGInterpolationHigh];
     self.imageView.layer.cornerRadius = self.imageView.frame.size.height /2;
     self.imageView.layer.masksToBounds = YES;
@@ -94,11 +104,7 @@
     
     [self.view addSubview:tabDurability];
     
-    txtNo.text = @"53211536";
-    txtName.text = @"Patsicha";
-    txtLastname.text = @"Tongteeka";
-    txtBikeNo.text = _bikeCode;
-    txtDurability.text = [[NSString alloc] initWithFormat:@"%.0f%%",durability];
+    
     
     txtNo.font = segoeuil(14);
     txtName.font = segoeui(20);

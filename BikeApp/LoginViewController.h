@@ -15,5 +15,6 @@
     IBOutlet UIButton *btnFacebook;
     IBOutlet UIButton *btnTwitter;
 }
+@property(nonatomic,retain) NSMutableData *receivedData;
 
 @end

@@ -30,6 +30,7 @@
     
     UIImage *imgCheckOut;
     UIImage *imgCancel;
+    
 }
 @end
 
@@ -48,10 +49,15 @@
 
     [super viewDidLoad];
     
-    NSString *model = [[UIDevice currentDevice] model];
-    if ([model isEqualToString:@"iPhone Simulator"]) {
-        txtPassword.text = @"a123";
-    }
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *userInfo = [[NSMutableArray alloc] init];
+    userInfo = [prefs objectForKey:@"MemberInfo"];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"student_picture"]]]];
+    self.imageView.image = image;
+    NSString *name = [userInfo valueForKey:@"student_name_en"];
+    NSLog(@"%@",userInfo);
+    lblName.text = [[NSString alloc] initWithFormat:@"Hi! %@",name ];
+    
     
     [self.navigationItem setHidesBackButton:YES];
 	// Do any additional setup after loading the view.
@@ -95,7 +101,19 @@
     imgCancel = [UIImage imageNamed:@"cancel.png"];
     self.navigationItem.rightBarButtonItem=[self settingsButton];
     
-    
+    NSString *model = [[UIDevice currentDevice] model];
+    if ([model isEqualToString:@"iPhone Simulator"]) {
+        txtPassword.text = @"a123";
+        lbl0.text = @"A";
+        lbl1.text = @"1";
+        lbl2.text = @"2";
+        lbl3.text = @"3";
+        [img0 setHidden:YES];
+        [img1 setHidden:YES];
+        [img2 setHidden:YES];
+        [img3 setHidden:YES];
+    }
+
 }
 
 - (UIBarButtonItem *)settingsButton

@@ -10,9 +10,16 @@
 #import "FirstViewController.h"
 
 @interface LoginViewController ()
+{
+    NSMutableURLRequest *request;
+    UIActivityIndicatorView *activityView;
+    UIView *loadingView;
+    UILabel *loadingLabel;
+}
 @end
 
 @implementation LoginViewController
+@synthesize receivedData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,14 +44,64 @@
 	[self setUI];
     //[self fontall];
     
-    NSString *model = [[UIDevice currentDevice] model];
-    if ([model isEqualToString:@"iPhone Simulator"]) {
-        txtUsername.text = @"53211536";
-        txtPassword.text = @"1234";
-    }
-    
+}
+-(void) viewDidAppear:(BOOL)animated
+{
+    txtUsername.text = @"";
+    txtPassword.text = @"";
 }
 - (IBAction)login:(id)sender {
+    
+    [txtUsername endEditing:YES];
+    [txtPassword endEditing:YES];
+    
+    NSString *username = txtUsername.text;
+    NSString *password = txtPassword.text;
+    
+    //[self textFieldDidEndEditing:usernameField];
+    //[self textFieldDidEndEditing:passwordField];
+    
+    if([username isEqualToString:@""] )
+    {
+        //[self redborderTextField:usernameField];
+        [EEHUDView growlWithMessage:@"missing username?"
+                          showStyle:EEHUDViewShowStyleShake
+                          hideStyle:EEHUDViewHideStyleFadeOut
+                    resultViewStyle:EEHUDResultViewStyleNG
+                           showTime:1.0];
+        return;
+    }
+    if([password isEqualToString:@""] )
+    {
+        //[self redborderTextField:usernameField];
+        [EEHUDView growlWithMessage:@"missing password?"
+                          showStyle:EEHUDViewShowStyleShake
+                          hideStyle:EEHUDViewHideStyleFadeOut
+                    resultViewStyle:EEHUDResultViewStyleNG
+                           showTime:1.0];
+        return;
+    }
+    
+    
+    if(![username isEqualToString:@""] && ![password isEqualToString:@""]) {
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+        
+        loadingView = [[UIView alloc] initWithFrame:CGRectMake(130, 250, 68, 68)];
+        loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+        loadingView.clipsToBounds = YES;
+        loadingView.layer.cornerRadius = 10.0;
+        
+        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        activityView.frame = CGRectMake(15 , 15, activityView.bounds.size.width, activityView.bounds.size.height);
+        [loadingView addSubview:activityView];
+        
+        [self.view addSubview:loadingView];
+        [activityView startAnimating];
+        
+        [self checkLogin];
+        
+    }    /*
     
     if([txtUsername.text isEqualToString:@"53211536"] && [txtPassword.text isEqualToString:@"1234"])
     {
@@ -54,23 +111,16 @@
         txtUsername.text = @"";
         txtPassword.text = @"";
         
-        [EEHUDView growlWithMessage:@"welcome"
-                          showStyle:EEHUDViewShowStyleFadeIn
-                          hideStyle:EEHUDViewHideStyleFadeOut
-                    resultViewStyle:EEHUDResultViewStyleChecked
-                           showTime:1.0];
+        
 
         FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
         [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
         [self presentViewController:svc animated:YES completion:nil];
     }
     else{
-        [EEHUDView growlWithMessage:@"miss something?"
-                          showStyle:EEHUDViewShowStyleShake
-                          hideStyle:EEHUDViewHideStyleFadeOut
-                    resultViewStyle:EEHUDResultViewStyleNG
-                           showTime:0.75];
+        
     }
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -101,5 +151,194 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/kmuttbike"]];
 }
 
+- (void)checkLogin
+{
+    
+    // 0 - WRONGUSER
+    // 1 - WRONGPASSWORD
+    // 2 - PASS
+    NSString *post =[NSString stringWithFormat:@"username=%@&password=%@",txtUsername.text, txtPassword.text];
+    
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    
+    NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",asciiString);
+    
+    NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/login.php"];
+    request = [NSMutableURLRequest requestWithURL:url
+                                      cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                  timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+	[request setHTTPBody:postData];
+    
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [receivedData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //sleep(0);
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    //inform the user
+    NSLog(@"Connection failed! Error - %@", [error localizedDescription]);
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // Hide Progress
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    [activityView stopAnimating];
+    [loadingView removeFromSuperview];
+    
+    // Return Status E.g : { "Status":"1", "Message":"Insert Data Successfully" }
+    // 0 = Error
+    // 1 = Completed
+    
+    if(receivedData)
+    {
+        // NSLog(@"%@",receivedData);
+        
+        // NSString *dataString = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
+        // NSLog(@"%@",dataString);
+        
+        id jsonObjects = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:nil];
+        
+        // value in key name
+        NSString *strStatus = [jsonObjects objectForKey:@"Status"];
+        NSString *strMessage = [jsonObjects objectForKey:@"Message"];
+        //NSString *strMemberID = [jsonObjects objectForKey:@"MemberID"];
+        NSLog(@"Status = %@",strStatus);
+        NSLog(@"Message = %@",strMessage);
+        //NSLog(@"MemberID = %@",strMemberID);
+        
+        // Completed
+        if( [strStatus isEqualToString:@"2"] ){
+            
+            
+            NSMutableArray *memberInfo = [[NSMutableArray alloc] init];
+            memberInfo = [jsonObjects objectForKey:@"User"];
+            /*
+            NSDictionary *dict;
+            dict = [NSDictionary dictionaryWithObjectsAndKeys:
+                    [jsonObjects objectForKey:@"name"], @"name",
+                    [jsonObjects objectForKey:@"email"], @"email",
+                    [jsonObjects objectForKey:@"gender"], @"gender",
+                    [jsonObjects objectForKey:@"birthday"], @"birthday",
+                    [jsonObjects objectForKey:@"weight"], @"weight",
+                    [jsonObjects objectForKey:@"height"], @"height",
+                    [jsonObjects objectForKey:@"MemberID"], @"id",
+                    nil];
+            [memberInfo addObject:dict];
+             */
+            
+            NSLog(@"%@",memberInfo);
+            // values in foreach loop
+            
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:[memberInfo objectAtIndex:0]  forKey:@"MemberInfo"];
+            /*
+            [prefs setObject:[jsonObjects objectForKey:@"Program"]  forKey:@"Program"];
+            [prefs setObject:[jsonObjects objectForKey:@"Calendar"]  forKey:@"Calendar"];
+            [prefs setObject:[jsonObjects objectForKey:@"ProgramDetail"]  forKey:@"ProgramDetail"];
+            
+            [self textFieldDidEndEditing:usernameField];
+            [self textFieldDidEndEditing:passwordField];
+            UIStoryboard *storyboard = self.storyboard;
+            MainMenuViewController *svc = [storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
+            //svc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+            usernameField.text = @"";
+            passwordField.text = @"";
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            [EEHUDView growlWithMessage:@"welcome"
+                              showStyle:EEHUDViewShowStyleShake
+                              hideStyle:EEHUDViewHideStyleFadeOut
+                        resultViewStyle:EEHUDResultViewStyleChecked
+                               showTime:2.0];
+            */
+            
+            
+            [EEHUDView growlWithMessage:@"welcome"
+                              showStyle:EEHUDViewShowStyleFadeIn
+                              hideStyle:EEHUDViewHideStyleFadeOut
+                        resultViewStyle:EEHUDResultViewStyleChecked
+                               showTime:1.0];
+            FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+            [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [self presentViewController:svc animated:YES completion:nil];
+
+        }
+        else if([strStatus isEqualToString:@"1"])
+        {
+            /*
+            [self redborderTextField:passwordField];
+             */
+            txtPassword.text = @"";
+             
+            [txtPassword becomeFirstResponder];
+            [EEHUDView growlWithMessage:@"wrong password"
+                              showStyle:EEHUDViewShowStyleShake
+                              hideStyle:EEHUDViewHideStyleFadeOut
+                        resultViewStyle:EEHUDResultViewStyleNG
+                               showTime:1.0];
+             
+        }
+        else if([strStatus isEqualToString:@"0"])
+        {
+            /*
+            [self redborderTextField:usernameField];
+             */
+            txtUsername.text = @"";
+            txtPassword.text = @"";
+            [txtUsername becomeFirstResponder];
+            [EEHUDView growlWithMessage:@"wrong username"
+                              showStyle:EEHUDViewShowStyleShake
+                              hideStyle:EEHUDViewHideStyleFadeOut
+                        resultViewStyle:EEHUDResultViewStyleNG
+                               showTime:1.0];
+             
+        }
+        else // Error
+        {
+            UIAlertView *error =[[UIAlertView alloc]
+                                 initWithTitle:@": ( Error!"
+                                 message:strMessage delegate:self
+                                 cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [error show];
+        }
+        
+    }
+    
+    // release the connection, and the data object
+}
 
 @end

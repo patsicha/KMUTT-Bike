@@ -188,7 +188,7 @@
 		1CF0DBC018D2C2DE00013827 /* urgentcall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBB918D2C2DE00013827 /* urgentcall_click.png */; };
 		1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBA18D2C2DE00013827 /* vdocall.png */; };
 		1CF0DBC218D2C2DE00013827 /* vdocall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */; };
-		2670914118D591D300697B01 /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = 2670914018D591D300697B01 /* login.php */; };
+		2689B36218D5A880006CF4F6 /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = 2689B36118D5A880006CF4F6 /* login.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -424,7 +424,7 @@
 		1CF0DBB918D2C2DE00013827 /* urgentcall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = urgentcall_click.png; sourceTree = "<group>"; };
 		1CF0DBBA18D2C2DE00013827 /* vdocall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall.png; sourceTree = "<group>"; };
 		1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall_click.png; sourceTree = "<group>"; };
-		2670914018D591D300697B01 /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
+		2689B36118D5A880006CF4F6 /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -797,7 +797,7 @@
 		1C6A791F18C985A7005A2BC9 /* BikeApp */ = {
 			isa = PBXGroup;
 			children = (
-				2670913F18D5918400697B01 /* PHP Files */,
+				2689B36018D5A870006CF4F6 /* PHP-Files */,
 				1CF0DB6318D2394400013827 /* txt */,
 				1C04083118CB5E2900367777 /* Library */,
 				1C04076118CB574100367777 /* UIBikeApps */,
@@ -956,12 +956,12 @@
 			path = nortify;
 			sourceTree = "<group>";
 		};
-		2670913F18D5918400697B01 /* PHP Files */ = {
+		2689B36018D5A870006CF4F6 /* PHP-Files */ = {
 			isa = PBXGroup;
 			children = (
-				2670914018D591D300697B01 /* login.php */,
+				2689B36118D5A880006CF4F6 /* login.php */,
 			);
-			name = "PHP Files";
+			path = "PHP-Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1084,7 +1084,7 @@
 				1CF0DB6518D2395300013827 /* tire.txt in Resources */,
 				1C0407CE18CB574100367777 /* achievments.png in Resources */,
 				1C04082018CB574100367777 /* icon_click.psd in Resources */,
-				2670914118D591D300697B01 /* login.php in Resources */,
+				2689B36218D5A880006CF4F6 /* login.php in Resources */,
 				1CF0DBBF18D2C2DE00013827 /* urgent_call.png in Resources */,
 				1C22645018D1D4D700B731C7 /* update_btn.png in Resources */,
 				1CF0DB8018D25CEB00013827 /* crank_icon.png in Resources */,
