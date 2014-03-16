@@ -707,7 +707,7 @@
         <scene sceneID="8BD-1l-oa4">
             <objects>
                 <tabBarController storyboardIdentifier="Break" definesPresentationContext="YES" modalTransitionStyle="partialCurl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lYp-WY-phy" customClass="BreakTabViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Unj-yX-l3q">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -835,7 +835,7 @@
         <scene sceneID="i7U-qo-Z0u">
             <objects>
                 <tabBarController storyboardIdentifier="Gear" definesPresentationContext="YES" modalTransitionStyle="partialCurl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SH7-B3-mke" customClass="GearTabViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Q11-Vz-L9c">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1121,7 +1121,7 @@
         <scene sceneID="R7B-AH-CNU">
             <objects>
                 <tabBarController storyboardIdentifier="Pedal" definesPresentationContext="YES" modalTransitionStyle="partialCurl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S8R-Ru-Ami" customClass="PedalTabViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="YPb-8E-PIo">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1194,7 +1194,7 @@
         <scene sceneID="t7J-jC-nVd">
             <objects>
                 <tabBarController storyboardIdentifier="Saddle" definesPresentationContext="YES" modalTransitionStyle="partialCurl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0hP-4p-wns" customClass="SaddleTabViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="I34-1w-klB">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1267,7 +1267,7 @@
         <scene sceneID="bfy-1b-YjR">
             <objects>
                 <tabBarController storyboardIdentifier="Handle" definesPresentationContext="YES" modalTransitionStyle="partialCurl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kkB-0F-6W1" customClass="HandleTabViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="FCk-Ad-Tll">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
