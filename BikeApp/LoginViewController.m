@@ -284,7 +284,7 @@
                               hideStyle:EEHUDViewHideStyleFadeOut
                         resultViewStyle:EEHUDResultViewStyleChecked
                                showTime:2.0];
-            */
+            
             
             
             [EEHUDView growlWithMessage:@"welcome"
@@ -292,6 +292,7 @@
                               hideStyle:EEHUDViewHideStyleFadeOut
                         resultViewStyle:EEHUDResultViewStyleChecked
                                showTime:1.0];
+             */
             FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
             [self presentViewController:svc animated:YES completion:nil];

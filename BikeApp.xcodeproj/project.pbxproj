@@ -189,6 +189,7 @@
 		1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBA18D2C2DE00013827 /* vdocall.png */; };
 		1CF0DBC218D2C2DE00013827 /* vdocall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */; };
 		2689B36218D5A880006CF4F6 /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = 2689B36118D5A880006CF4F6 /* login.php */; };
+		26FA9B6918D6F7BD00E56983 /* rent_bike.php in Resources */ = {isa = PBXBuildFile; fileRef = 26FA9B6818D6F7BD00E56983 /* rent_bike.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -425,6 +426,7 @@
 		1CF0DBBA18D2C2DE00013827 /* vdocall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall.png; sourceTree = "<group>"; };
 		1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall_click.png; sourceTree = "<group>"; };
 		2689B36118D5A880006CF4F6 /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
+		26FA9B6818D6F7BD00E56983 /* rent_bike.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = rent_bike.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -960,6 +962,7 @@
 			isa = PBXGroup;
 			children = (
 				2689B36118D5A880006CF4F6 /* login.php */,
+				26FA9B6818D6F7BD00E56983 /* rent_bike.php */,
 			);
 			path = "PHP-Files";
 			sourceTree = "<group>";
@@ -1153,6 +1156,7 @@
 				1C04080D18CB574100367777 /* your_bike01.png in Resources */,
 				1C04080C18CB574100367777 /* welcome03.png in Resources */,
 				1C0407E518CB574100367777 /* segoeuil.ttf in Resources */,
+				26FA9B6918D6F7BD00E56983 /* rent_bike.php in Resources */,
 				1C0407F618CB574100367777 /* error.png in Resources */,
 				1C0407EC18CB574100367777 /* fonts_build03.png in Resources */,
 				1CF0DBBE18D2C2DE00013827 /* send_location_click.png in Resources */,

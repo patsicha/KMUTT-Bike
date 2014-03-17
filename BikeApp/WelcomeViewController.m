@@ -23,18 +23,26 @@
     IBOutlet UIImageView *img1;
     IBOutlet UIImageView *img2;
     IBOutlet UIImageView *img3;
+    IBOutlet UIImageView *img4;
     IBOutlet UILabel *lbl0;
     IBOutlet UILabel *lbl1;
     IBOutlet UILabel *lbl2;
     IBOutlet UILabel *lbl3;
+    IBOutlet UILabel *lbl4;
     
     UIImage *imgCheckOut;
     UIImage *imgCancel;
+    
+    NSMutableURLRequest *request;
+    UIActivityIndicatorView *activityView;
+    UIView *loadingView;
+    UILabel *loadingLabel;
     
 }
 @end
 
 @implementation WelcomeViewController
+@synthesize receivedData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -91,11 +99,12 @@
     lbl1.text = @" ";
     lbl2.text = @" ";
     lbl3.text = @" ";
-    
+    lbl4.text = @" ";
     [img0 setHidden:NO];
     [img1 setHidden:NO];
     [img2 setHidden:NO];
     [img3 setHidden:NO];
+    [img4 setHidden:NO];
     
     imgCheckOut = [UIImage imageNamed:@"checkout.png"];
     imgCancel = [UIImage imageNamed:@"cancel.png"];
@@ -103,15 +112,17 @@
     
     NSString *model = [[UIDevice currentDevice] model];
     if ([model isEqualToString:@"iPhone Simulator"]) {
-        txtPassword.text = @"a123";
+        txtPassword.text = @"a0001";
         lbl0.text = @"A";
-        lbl1.text = @"1";
-        lbl2.text = @"2";
-        lbl3.text = @"3";
+        lbl1.text = @"0";
+        lbl2.text = @"0";
+        lbl3.text = @"0";
+        lbl4.text = @"1";
         [img0 setHidden:YES];
         [img1 setHidden:YES];
         [img2 setHidden:YES];
         [img3 setHidden:YES];
+        [img4 setHidden:YES];
     }
 
 }
@@ -175,11 +186,13 @@
         lbl1.text = @" ";
         lbl2.text = @" ";
         lbl3.text = @" ";
+        lbl4.text = @" ";
         
         [img0 setHidden:NO];
         [img1 setHidden:NO];
         [img2 setHidden:NO];
         [img3 setHidden:NO];
+        [img4 setHidden:NO];
     }
     if([str length]==1)
     {
@@ -187,11 +200,13 @@
         lbl1.text = @" ";
         lbl2.text = @" ";
         lbl3.text = @" ";
+        lbl4.text = @" ";
         
         [img0 setHidden:YES];
         [img1 setHidden:NO];
         [img2 setHidden:NO];
         [img3 setHidden:NO];
+        [img4 setHidden:NO];
     }
     if([str length]==2)
     {
@@ -199,11 +214,13 @@
         lbl1.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:1] ];
         lbl2.text = @" ";
         lbl3.text = @" ";
+        lbl4.text = @" ";
         
         [img0 setHidden:YES];
         [img1 setHidden:YES];
         [img2 setHidden:NO];
         [img3 setHidden:NO];
+        [img4 setHidden:NO];
     }
     if([str length]==3)
     {
@@ -211,11 +228,13 @@
         lbl1.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:1] ];
         lbl2.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:2] ];
         lbl3.text = @" ";
+        lbl4.text = @" ";
         
         [img0 setHidden:YES];
         [img1 setHidden:YES];
         [img2 setHidden:YES];
         [img3 setHidden:NO];
+        [img4 setHidden:NO];
     }
     if([str length]==4)
     {
@@ -223,15 +242,31 @@
         lbl1.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:1] ];
         lbl2.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:2] ];
         lbl3.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:3] ];
+        lbl4.text = @" ";
         
         [img0 setHidden:YES];
         [img1 setHidden:YES];
         [img2 setHidden:YES];
         [img3 setHidden:YES];
+        [img4 setHidden:NO];
+    }
+    if([str length]==5)
+    {
+        lbl0.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:0] ];
+        lbl1.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:1] ];
+        lbl2.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:2] ];
+        lbl3.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:3] ];
+        lbl4.text = [[NSString alloc] initWithFormat:@"%c",[str characterAtIndex:4] ];
+        
+        [img0 setHidden:YES];
+        [img1 setHidden:YES];
+        [img2 setHidden:YES];
+        [img3 setHidden:YES];
+        [img4 setHidden:YES];
     }
 
 }
-#define MAX_LENGTH 4
+#define MAX_LENGTH 5
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
@@ -273,15 +308,17 @@
         lbl1.text = @" ";
         lbl2.text = @" ";
         lbl3.text = @" ";
+        lbl4.text = @" ";
         
         [img0 setHidden:NO];
         [img1 setHidden:NO];
         [img2 setHidden:NO];
         [img3 setHidden:NO];
+        [img4 setHidden:NO];
         
         x=0;
     }else{
-    if([txtPassword.text length] == 4) {
+    if([txtPassword.text length] == 5 ){
         if([[lblWelcome text] isEqualToString:@"Welcome ^ ^"] || [[lblWelcome text] isEqualToString:@"Please enter a valid code :)"])
         {
             x =0;
@@ -337,6 +374,147 @@
         [self.navigationController pushViewController:svc animated:NO];
     }
 }
+- (void)rent_bike
+{
+    
+    // 0 - WRONGUSER
+    // 1 - WRONGPASSWORD
+    // 2 - PASS
+    NSString *post =[NSString stringWithFormat:@"bikecode=%@", txtPassword.text];
+    
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    
+    NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",asciiString);
+    
+    NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/rent_bike.php"];
+    request = [NSMutableURLRequest requestWithURL:url
+                                      cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                  timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+	[request setHTTPBody:postData];
+    
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [receivedData setLength:0];
+}
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //sleep(0);
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    //inform the user
+    NSLog(@"Connection failed! Error - %@", [error localizedDescription]);
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // Hide Progress
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [activityView stopAnimating];
+    [loadingView removeFromSuperview];
+ 
+    // 0 = Error
+    // 1 = Completed
+    
+    if(receivedData)
+    {
+        
+        id jsonObjects = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:nil];
+        
+        // value in key name
+        NSString *strStatus = [jsonObjects objectForKey:@"Status"];
+        NSString *strMessage = [jsonObjects objectForKey:@"Message"];
+        //NSString *strMemberID = [jsonObjects objectForKey:@"MemberID"];
+        NSLog(@"Status = %@",strStatus);
+        NSLog(@"Message = %@",strMessage);
+        //NSLog(@"MemberID = %@",strMemberID);
+        
+        // Completed
+        if( [strStatus isEqualToString:@"1"] ){
+            
+            
+            NSMutableArray *bikeInfo = [[NSMutableArray alloc] init];
+            bikeInfo = [jsonObjects objectForKey:@"Bike"];
+            
+            NSLog(@"%@",bikeInfo);
+            // values in foreach loop
+            
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:bikeInfo  forKey:@"BikeInfo"];
+            /*
+             [prefs setObject:[jsonObjects objectForKey:@"Program"]  forKey:@"Program"];
+             [prefs setObject:[jsonObjects objectForKey:@"Calendar"]  forKey:@"Calendar"];
+             [prefs setObject:[jsonObjects objectForKey:@"ProgramDetail"]  forKey:@"ProgramDetail"];
+             
+             [self textFieldDidEndEditing:usernameField];
+             [self textFieldDidEndEditing:passwordField];
+             UIStoryboard *storyboard = self.storyboard;
+             MainMenuViewController *svc = [storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
+             //svc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
+             usernameField.text = @"";
+             passwordField.text = @"";
+             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+             
+             [EEHUDView growlWithMessage:@"welcome"
+             showStyle:EEHUDViewShowStyleShake
+             hideStyle:EEHUDViewHideStyleFadeOut
+             resultViewStyle:EEHUDResultViewStyleChecked
+             showTime:2.0];
+             
+             
+             
+             [EEHUDView growlWithMessage:@"welcome"
+             showStyle:EEHUDViewShowStyleFadeIn
+             hideStyle:EEHUDViewHideStyleFadeOut
+             resultViewStyle:EEHUDResultViewStyleChecked
+             showTime:1.0];
+             
+            FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+            [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            [self presentViewController:svc animated:YES completion:nil];
+             */
+            
+        }
+        else // Error
+        {
+            UIAlertView *error =[[UIAlertView alloc]
+                                 initWithTitle:@": ( Error!"
+                                 message:strMessage delegate:self
+                                 cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [error show];
+        }
+        
+    }
+    
+    // release the connection, and the data object
+}
 
 @end

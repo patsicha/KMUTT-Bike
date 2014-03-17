@@ -10,4 +10,5 @@
 
 @interface WelcomeViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property(nonatomic,retain) NSMutableData *receivedData;
 @end
