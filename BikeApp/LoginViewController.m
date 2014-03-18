@@ -45,11 +45,6 @@
     //[self fontall];
     
 }
--(void) viewDidAppear:(BOOL)animated
-{
-    txtUsername.text = @"";
-    txtPassword.text = @"";
-}
 - (IBAction)login:(id)sender {
     
     [txtUsername endEditing:YES];
@@ -224,10 +219,6 @@
     
     if(receivedData)
     {
-        // NSLog(@"%@",receivedData);
-        
-        // NSString *dataString = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
-        // NSLog(@"%@",dataString);
         
         id jsonObjects = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:nil];
         
@@ -245,56 +236,20 @@
             
             NSMutableArray *memberInfo = [[NSMutableArray alloc] init];
             memberInfo = [jsonObjects objectForKey:@"User"];
-            /*
-            NSDictionary *dict;
-            dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                    [jsonObjects objectForKey:@"name"], @"name",
-                    [jsonObjects objectForKey:@"email"], @"email",
-                    [jsonObjects objectForKey:@"gender"], @"gender",
-                    [jsonObjects objectForKey:@"birthday"], @"birthday",
-                    [jsonObjects objectForKey:@"weight"], @"weight",
-                    [jsonObjects objectForKey:@"height"], @"height",
-                    [jsonObjects objectForKey:@"MemberID"], @"id",
-                    nil];
-            [memberInfo addObject:dict];
-             */
-            
+ 
             NSLog(@"%@",memberInfo);
             // values in foreach loop
             
             
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setObject:[memberInfo objectAtIndex:0]  forKey:@"MemberInfo"];
-            /*
-            [prefs setObject:[jsonObjects objectForKey:@"Program"]  forKey:@"Program"];
-            [prefs setObject:[jsonObjects objectForKey:@"Calendar"]  forKey:@"Calendar"];
-            [prefs setObject:[jsonObjects objectForKey:@"ProgramDetail"]  forKey:@"ProgramDetail"];
-            
-            [self textFieldDidEndEditing:usernameField];
-            [self textFieldDidEndEditing:passwordField];
-            UIStoryboard *storyboard = self.storyboard;
-            MainMenuViewController *svc = [storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-            //svc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-            usernameField.text = @"";
-            passwordField.text = @"";
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            
-            [EEHUDView growlWithMessage:@"welcome"
-                              showStyle:EEHUDViewShowStyleShake
-                              hideStyle:EEHUDViewHideStyleFadeOut
-                        resultViewStyle:EEHUDResultViewStyleChecked
-                               showTime:2.0];
+            [prefs setObject:memberInfo  forKey:@"MemberInfo"];
+
             
             
-            
-            [EEHUDView growlWithMessage:@"welcome"
-                              showStyle:EEHUDViewShowStyleFadeIn
-                              hideStyle:EEHUDViewHideStyleFadeOut
-                        resultViewStyle:EEHUDResultViewStyleChecked
-                               showTime:1.0];
-             */
             FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
             [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+            txtUsername.text = @"";
+            txtPassword.text = @"";
             [self presentViewController:svc animated:YES completion:nil];
 
         }

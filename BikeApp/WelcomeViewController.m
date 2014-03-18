@@ -37,6 +37,11 @@
     UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
+    NSMutableArray *userInfo;
+    
+    NSString *bikeID;
+    NSString *strDatetime;
+    NSURLConnection *theConnection;
     
 }
 @end
@@ -54,11 +59,11 @@
 }
 - (void)viewDidLoad
 {
-
+    
     [super viewDidLoad];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSMutableArray *userInfo = [[NSMutableArray alloc] init];
+    userInfo = [[NSMutableArray alloc] init];
     userInfo = [prefs objectForKey:@"MemberInfo"];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"student_picture"]]]];
     self.imageView.image = image;
@@ -124,7 +129,7 @@
         [img3 setHidden:YES];
         [img4 setHidden:YES];
     }
-
+    
 }
 
 - (UIBarButtonItem *)settingsButton
@@ -264,7 +269,7 @@
         [img3 setHidden:YES];
         [img4 setHidden:YES];
     }
-
+    
 }
 #define MAX_LENGTH 5
 
@@ -318,36 +323,59 @@
         
         x=0;
     }else{
-    if([txtPassword.text length] == 5 ){
-        if([[lblWelcome text] isEqualToString:@"Welcome ^ ^"] || [[lblWelcome text] isEqualToString:@"Please enter a valid code :)"])
-        {
-            x =0;
-            [lblWelcome setText:@"Pending"];
-            [btnCheckOut setBackgroundImage:imgCancel forState:UIControlStateNormal];
-            timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+        if([txtPassword.text length] == 5 ){
+            if(theConnection == nil)
+            {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                x =0;
+                [lblWelcome setText:@"Pending"];
+                [btnCheckOut setBackgroundImage:imgCancel forState:UIControlStateNormal];
+                timer=[NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerFired) userInfo:nil repeats:YES];
+                [self rent_bike];
+            }else{
+                
+                [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
+                [lblWelcome setText:@"Welcome ^ ^"];
+                [timer invalidate];
+                [theConnection cancel];
+                theConnection = nil;
+                txtPassword.text = @"";
+                lbl0.text = @" ";
+                lbl1.text = @" ";
+                lbl2.text = @" ";
+                lbl3.text = @" ";
+                lbl4.text = @" ";
+                
+                [img0 setHidden:NO];
+                [img1 setHidden:NO];
+                [img2 setHidden:NO];
+                [img3 setHidden:NO];
+                [img4 setHidden:NO];
+                [self shakeView:img0];
+                [self shakeView:img1];
+                [self shakeView:img2];
+                [self shakeView:img3];
+                [self shakeView:img4];
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            }
         }else{
-            [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
-            [lblWelcome setText:@"Welcome ^ ^"];
-            [timer invalidate];
+            
+            [self shakeView:img0];
+            [self shakeView:img1];
+            [self shakeView:img2];
+            [self shakeView:img3];
+            [self shakeView:img4];
+            [lblWelcome setText:@"Please enter a valid code :)"];
+            
         }
-    }else{
-        
-        [self shakeView:img0];
-        [self shakeView:img1];
-        [self shakeView:img2];
-        [self shakeView:img3];
-        [lblWelcome setText:@"Please enter a valid code :)"];
-        
-    }
     }
     
 }
 -(void)timerFired
 {
-    if( ++x == 5) [self goYourBike];
     [lblWelcome setText:[[NSString alloc]initWithFormat:@" %@.",[lblWelcome text]]];
     if([[lblWelcome text] isEqualToString:@"    Pending...."])
-        [lblWelcome setText:@"Pending"];
+    [lblWelcome setText:@"Pending"];
 }
 
 
@@ -377,24 +405,21 @@
 - (void)rent_bike
 {
     
-    // 0 - WRONGUSER
-    // 1 - WRONGPASSWORD
-    // 2 - PASS
-    NSString *post =[NSString stringWithFormat:@"bikecode=%@", txtPassword.text];
+    NSString *post =[NSString stringWithFormat:@"bikecode=%@&userid=%@", txtPassword.text,[userInfo valueForKey:@"student_id"]];
     
     NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     
     NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
     NSLog(@"%@",asciiString);
     
-    NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/rent_bike.php"];
+    NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/pending.php"];
     request = [NSMutableURLRequest requestWithURL:url
                                       cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                   timeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
 	[request setHTTPBody:postData];
     
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     if (theConnection) {
         self.receivedData = [NSMutableData data];
@@ -419,7 +444,7 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
 {
     
-    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
     
     if (theConnection) {
         self.receivedData = [NSMutableData data];
@@ -436,80 +461,145 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     // Hide Progress
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [activityView stopAnimating];
-    [loadingView removeFromSuperview];
- 
+    
+    
     // 0 = Error
     // 1 = Completed
     
     if(receivedData)
     {
+        //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //[activityView stopAnimating];
+        //[loadingView removeFromSuperview];
         
         id jsonObjects = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:nil];
         
         // value in key name
         NSString *strStatus = [jsonObjects objectForKey:@"Status"];
         NSString *strMessage = [jsonObjects objectForKey:@"Message"];
+        
         //NSString *strMemberID = [jsonObjects objectForKey:@"MemberID"];
         NSLog(@"Status = %@",strStatus);
         NSLog(@"Message = %@",strMessage);
-        //NSLog(@"MemberID = %@",strMemberID);
         
         // Completed
-        if( [strStatus isEqualToString:@"1"] ){
+        if( [strMessage isEqualToString:@"PENDING"] ){
+            
+            if([strStatus isEqualToString:@"1"])
+            {
+                strDatetime = [jsonObjects objectForKey:@"Datetime"];
+                bikeID = [jsonObjects objectForKey:@"BikeID"];
+                
+            }
+            
+            NSString *post =[NSString stringWithFormat:@"bikeid=%@&userid=%@&datetime=%@", bikeID,[userInfo valueForKey:@"student_id"],strDatetime];
+            
+            NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+            
+            NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
+            NSLog(@"%@",asciiString);
+            
+            NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/check_pending.php"];
+            request = [NSMutableURLRequest requestWithURL:url
+                                              cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                          timeoutInterval:10.0];
+            [request setHTTPMethod:@"POST"];
+            [request setHTTPBody:postData];
+            
+            theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+            
+            if (theConnection) {
+                self.receivedData = [NSMutableData data];
+            } else {
+                UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+                [connectFailMessage show];
+                
+            }
+            
+        }
+        else if( [strMessage isEqualToString:@"APPROVED"] ){
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [self goYourBike];
             
             
-            NSMutableArray *bikeInfo = [[NSMutableArray alloc] init];
-            bikeInfo = [jsonObjects objectForKey:@"Bike"];
+            NSLog(@"OK");
             
-            NSLog(@"%@",bikeInfo);
-            // values in foreach loop
+        }
+        
+        else if( [strMessage isEqualToString:@"BIKENOTAVALIABLE"] ){
+            [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [timer invalidate];
+            txtPassword.text = @"";
+            lbl0.text = @" ";
+            lbl1.text = @" ";
+            lbl2.text = @" ";
+            lbl3.text = @" ";
+            lbl4.text = @" ";
             
+            [img0 setHidden:NO];
+            [img1 setHidden:NO];
+            [img2 setHidden:NO];
+            [img3 setHidden:NO];
+            [img4 setHidden:NO];
+            [self shakeView:img0];
+            [self shakeView:img1];
+            [self shakeView:img2];
+            [self shakeView:img3];
+            [self shakeView:img4];
+            [lblWelcome setText:@"Bike Not Avaliable Now !"];
+            [theConnection cancel];
+            theConnection = nil;
+        }
+        else if( [strMessage isEqualToString:@"BIKENOTFOUND"] ){
+            [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [timer invalidate];
+            txtPassword.text = @"";
+            lbl0.text = @" ";
+            lbl1.text = @" ";
+            lbl2.text = @" ";
+            lbl3.text = @" ";
+            lbl4.text = @" ";
             
-            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-            [prefs setObject:bikeInfo  forKey:@"BikeInfo"];
-            /*
-             [prefs setObject:[jsonObjects objectForKey:@"Program"]  forKey:@"Program"];
-             [prefs setObject:[jsonObjects objectForKey:@"Calendar"]  forKey:@"Calendar"];
-             [prefs setObject:[jsonObjects objectForKey:@"ProgramDetail"]  forKey:@"ProgramDetail"];
-             
-             [self textFieldDidEndEditing:usernameField];
-             [self textFieldDidEndEditing:passwordField];
-             UIStoryboard *storyboard = self.storyboard;
-             MainMenuViewController *svc = [storyboard instantiateViewControllerWithIdentifier:@"MainMenu"];
-             //svc.modalTransitionStyle=UIModalTransitionStyleFlipHorizontal;
-             usernameField.text = @"";
-             passwordField.text = @"";
-             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-             
-             [EEHUDView growlWithMessage:@"welcome"
-             showStyle:EEHUDViewShowStyleShake
-             hideStyle:EEHUDViewHideStyleFadeOut
-             resultViewStyle:EEHUDResultViewStyleChecked
-             showTime:2.0];
-             
-             
-             
-             [EEHUDView growlWithMessage:@"welcome"
-             showStyle:EEHUDViewShowStyleFadeIn
-             hideStyle:EEHUDViewHideStyleFadeOut
-             resultViewStyle:EEHUDResultViewStyleChecked
-             showTime:1.0];
-             
-            FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
-            [svc setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
-            [self presentViewController:svc animated:YES completion:nil];
-             */
-            
+            [img0 setHidden:NO];
+            [img1 setHidden:NO];
+            [img2 setHidden:NO];
+            [img3 setHidden:NO];
+            [img4 setHidden:NO];
+            [self shakeView:img0];
+            [self shakeView:img1];
+            [self shakeView:img2];
+            [self shakeView:img3];
+            [self shakeView:img4];
+            [lblWelcome setText:@"Bike Not Found !"];
+            [theConnection cancel];
+            theConnection = nil;
         }
         else // Error
         {
+            [btnCheckOut setBackgroundImage:imgCheckOut forState:UIControlStateNormal];
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [timer invalidate];
+            txtPassword.text = @"";
+            lbl0.text = @" ";
+            lbl1.text = @" ";
+            lbl2.text = @" ";
+            lbl3.text = @" ";
+            lbl4.text = @" ";
+            [img0 setHidden:NO];
+            [img1 setHidden:NO];
+            [img2 setHidden:NO];
+            [img3 setHidden:NO];
+            [img4 setHidden:NO];
+            [theConnection cancel];
+            theConnection = nil;
             UIAlertView *error =[[UIAlertView alloc]
                                  initWithTitle:@": ( Error!"
                                  message:strMessage delegate:self
                                  cancelButtonTitle:@"OK" otherButtonTitles: nil];
-            [error show];
+            [lblWelcome setText:@"Server is under maintenance."];
+            //[error show];
         }
         
     }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C0337CE18D87AF6002C7915 /* pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337CD18D87AF6002C7915 /* pending.php */; };
+		1C0337D018D8897B002C7915 /* check_pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337CF18D8897B002C7915 /* check_pending.php */; };
+		1C0337D218D8B210002C7915 /* addToRentalLog.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D118D8B210002C7915 /* addToRentalLog.php */; };
 		1C04076018CB570800367777 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C04075F18CB570800367777 /* LoginViewController.m */; };
 		1C0407CE18CB574100367777 /* achievments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076218CB574100367777 /* achievments.png */; };
 		1C0407CF18CB574100367777 /* arch_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076418CB574100367777 /* arch_bar.png */; };
@@ -189,7 +192,6 @@
 		1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBA18D2C2DE00013827 /* vdocall.png */; };
 		1CF0DBC218D2C2DE00013827 /* vdocall_click.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */; };
 		2689B36218D5A880006CF4F6 /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = 2689B36118D5A880006CF4F6 /* login.php */; };
-		26FA9B6918D6F7BD00E56983 /* rent_bike.php in Resources */ = {isa = PBXBuildFile; fileRef = 26FA9B6818D6F7BD00E56983 /* rent_bike.php */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +205,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C0337CD18D87AF6002C7915 /* pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = pending.php; sourceTree = "<group>"; };
+		1C0337CF18D8897B002C7915 /* check_pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = check_pending.php; sourceTree = "<group>"; };
+		1C0337D118D8B210002C7915 /* addToRentalLog.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = addToRentalLog.php; sourceTree = "<group>"; };
 		1C04075E18CB570800367777 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1C04075F18CB570800367777 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1C04076218CB574100367777 /* achievments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = achievments.png; sourceTree = "<group>"; };
@@ -426,7 +431,6 @@
 		1CF0DBBA18D2C2DE00013827 /* vdocall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall.png; sourceTree = "<group>"; };
 		1CF0DBBB18D2C2DE00013827 /* vdocall_click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vdocall_click.png; sourceTree = "<group>"; };
 		2689B36118D5A880006CF4F6 /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
-		26FA9B6818D6F7BD00E56983 /* rent_bike.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = rent_bike.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -961,8 +965,10 @@
 		2689B36018D5A870006CF4F6 /* PHP-Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C0337D118D8B210002C7915 /* addToRentalLog.php */,
+				1C0337CF18D8897B002C7915 /* check_pending.php */,
 				2689B36118D5A880006CF4F6 /* login.php */,
-				26FA9B6818D6F7BD00E56983 /* rent_bike.php */,
+				1C0337CD18D87AF6002C7915 /* pending.php */,
 			);
 			path = "PHP-Files";
 			sourceTree = "<group>";
@@ -1128,6 +1134,7 @@
 				1C0407E318CB574100367777 /* segoeuib.ttf in Resources */,
 				1CF0DB6118D228E800013827 /* tire_pic01.png in Resources */,
 				1C0407E618CB574100367777 /* segoeuiz.ttf in Resources */,
+				1C0337D218D8B210002C7915 /* addToRentalLog.php in Resources */,
 				1C0407D418CB574100367777 /* 20km.png in Resources */,
 				1C0407E718CB574100367777 /* seguisb.ttf in Resources */,
 				1CF0DB9A18D2AAFA00013827 /* paddle.txt in Resources */,
@@ -1145,6 +1152,7 @@
 				1C04081618CB574100367777 /* break_fix.png in Resources */,
 				1CF0DBC018D2C2DE00013827 /* urgentcall_click.png in Resources */,
 				1C0407DE18CB574100367777 /* content03.png in Resources */,
+				1C0337CE18D87AF6002C7915 /* pending.php in Resources */,
 				1C04082918CB574100367777 /* wheel_click.png in Resources */,
 				1CF0DBC118D2C2DE00013827 /* vdocall.png in Resources */,
 				1C0407F918CB574100367777 /* coca_cola.png in Resources */,
@@ -1156,7 +1164,6 @@
 				1C04080D18CB574100367777 /* your_bike01.png in Resources */,
 				1C04080C18CB574100367777 /* welcome03.png in Resources */,
 				1C0407E518CB574100367777 /* segoeuil.ttf in Resources */,
-				26FA9B6918D6F7BD00E56983 /* rent_bike.php in Resources */,
 				1C0407F618CB574100367777 /* error.png in Resources */,
 				1C0407EC18CB574100367777 /* fonts_build03.png in Resources */,
 				1CF0DBBE18D2C2DE00013827 /* send_location_click.png in Resources */,
@@ -1174,6 +1181,7 @@
 				1CF0DB9B18D2AAFA00013827 /* saddle.txt in Resources */,
 				1C04082718CB574100367777 /* saddle_fix.png in Resources */,
 				1C04080018CB574100367777 /* twitter.png in Resources */,
+				1C0337D018D8897B002C7915 /* check_pending.php in Resources */,
 				1C04080B18CB574100367777 /* welcome02.png in Resources */,
 				1C0407FD18CB574100367777 /* idpwbox.png in Resources */,
 			);

@@ -21,9 +21,8 @@
     $arr = null;
     if(!$objResult)
     {
-        //echo "WRONGUSER";
         $arr["Status"] = "0";
-        $arr["Message"] = "WRONGUSER";
+        $arr["Message"] = "UNKNOWN_USER";
     }
     else
     {
@@ -58,59 +57,7 @@
                 array_push($resultArray,$arrCol);
             }
             
-            $arr["User"] = $resultArray;
-            /*
-            $strSQL = "SELECT * FROM calendar WHERE userid = ".$arr["MemberID"];
-            mysql_query("SET NAMES UTF8");
-            $objQuery = mysql_query($strSQL);
-            $intNumField = mysql_num_fields($objQuery);
-            $resultArray1 = array();
-            while($obResult = mysql_fetch_array($objQuery))
-            {
-                $arrCol1 = array();
-                for($i=0;$i<$intNumField;$i++)
-                {
-                    $arrCol1[mysql_field_name($objQuery,$i)] = $obResult[$i];
-                }
-                array_push($resultArray1,$arrCol1);
-            }
-            
-            $arr["Calendar"] = $resultArray1;
-            
-            $strSQL = "SELECT * FROM program WHERE userid = ".$arr["MemberID"];
-            mysql_query("SET NAMES UTF8");
-            $objQuery = mysql_query($strSQL);
-            $intNumField = mysql_num_fields($objQuery);
-            $resultArray = array();
-            while($obResult = mysql_fetch_array($objQuery))
-            {
-                $arrCol = array();
-                for($i=0;$i<$intNumField;$i++)
-                {
-                    $arrCol[mysql_field_name($objQuery,$i)] = $obResult[$i];
-                }
-                array_push($resultArray,$arrCol);
-            }
-            
-            $arr["Program"] = $resultArray;
-            
-            $strSQL = "SELECT * FROM program_detail WHERE 1";
-            mysql_query("SET NAMES UTF8");
-            $objQuery = mysql_query($strSQL);
-            $intNumField = mysql_num_fields($objQuery);
-            $resultArray1 = array();
-            while($obResult = mysql_fetch_array($objQuery))
-            {
-                $arrCol1 = array();
-                for($i=0;$i<$intNumField;$i++)
-                {
-                    $arrCol1[mysql_field_name($objQuery,$i)] = $obResult[$i];
-                }
-                array_push($resultArray1,$arrCol1);
-            }
-            
-            $arr["ProgramDetail"] = $resultArray1;
-             */
+            $arr["User"] = $resultArray[0];
         }
     }
     
