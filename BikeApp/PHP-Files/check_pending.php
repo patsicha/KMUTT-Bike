@@ -10,9 +10,9 @@
         die('Could not connect: ' . mysql_error());
     }
     
-    //$_POST["bikeid"] = "0001";
-    //$_POST["userid"] = "53211536";
-    //$_POST["datetime"] = "2014-03-18 14:52:57";
+   // $_POST["bikeid"] = "0001";
+   // $_POST["userid"] = "53211536";
+   // $_POST["datetime"] = "2014-03-18 14:52:57";
     mysql_select_db("1566088_db");
     mysql_query("SET NAMES UTF8");
     
@@ -32,11 +32,25 @@
     }else{
         $arr["Status"] = "1";
         $arr["Message"] = "APPROVED";
-        $strSQL = "INSERT INTO `rental log`(`user_id`, `bicycle_id`, `check_out_date_time`) VALUES ('".$userID."','".$bikeID."','".$datetime."')";
+       // $strSQL = "INSERT INTO `rental log`(`user_id`, `bicycle_id`, `check_out_date_time`) VALUES ('".$userID."','".$bikeID."','".$datetime."')";
+        //$objQuery = mysql_query($strSQL);
+        //$strSQL = "UPDATE  `bicycle` SET  `bicycle_status` =  'Rented' WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
+        //$objQuery = mysql_query($strSQL);
+        $strSQL = "SELECT * FROM `bicycle` INNER JOIN `bicycle model information` ON `bicycle`.`bicycle_model` = `bicycle model information`.`bicycle_model` INNER JOIN `bicycle maintain` ON `bicycle`.`bicycle_id` = `bicycle maintain`.`bicycle_id` WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
         $objQuery = mysql_query($strSQL);
-        $strSQL = "UPDATE  `bicycle` SET  `bicycle_status` =  'Rented' WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
-        $objQuery = mysql_query($strSQL);
-        $strSQL = "SELECT * FROM `bicycle` INNER JOIN `bicycle model information` ON `bicycle`.`bicycle_model` = `bicycle model information`.`bicycle_model` INNER JOIN `bicycle maintain` ON `bicycle`.`bicycle_id` = `bicycle maintain`.`bicycle_id` ";
+        $intNumField = mysql_num_fields($objQuery);
+        $resultArray = array();
+        while($obResult = mysql_fetch_array($objQuery))
+        {
+            $arrCol = array();
+            for($i=0;$i<$intNumField;$i++)
+            {
+                $arrCol[mysql_field_name($objQuery,$i)] = $obResult[$i];
+            }
+            array_push($resultArray,$arrCol);
+        }
+        
+        $arr["bikeInfo"] = $resultArray[0];
         
     }
     mysql_close($link);

@@ -86,12 +86,17 @@
                                     </button>
                                 </subviews>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SPLASH2.png" translatesAutoresizingMaskIntoConstraints="NO" id="nvG-6w-qSJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="btnFacebook" destination="Lkv-LL-OlY" id="LU9-PO-J5a"/>
                         <outlet property="btnTwitter" destination="WIR-gV-H3B" id="J6C-En-8HR"/>
+                        <outlet property="spash" destination="nvG-6w-qSJ" id="EXO-Uu-vyS"/>
                         <outlet property="txtPassword" destination="UHJ-HT-NgS" id="KdI-aE-aHD"/>
                         <outlet property="txtUsername" destination="urL-oL-M4O" id="YcK-xQ-dSd"/>
                     </connections>
@@ -249,6 +254,10 @@
                                 <color key="textColor" red="0.56241446169999998" green="0.33202780850000002" blue="0.1016411639" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SPLASH2.png" translatesAutoresizingMaskIntoConstraints="NO" id="qBi-c7-KSL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -271,6 +280,7 @@
                         <outlet property="lblName" destination="JVM-WO-Vio" id="LxB-2P-uf1"/>
                         <outlet property="lblTitleCode" destination="s2O-1j-9FB" id="HZR-Um-mjE"/>
                         <outlet property="lblWelcome" destination="vD7-Cn-Lf2" id="5f0-HA-q7s"/>
+                        <outlet property="splash" destination="qBi-c7-KSL" id="led-Lo-8A1"/>
                         <outlet property="txtPassword" destination="00I-y9-PFh" id="6SM-yP-OcW"/>
                         <segue destination="ktc-h9-bGS" kind="push" id="DU3-QI-geS"/>
                     </connections>
@@ -1353,6 +1363,7 @@
     <resources>
         <image name="100km_d.png" width="97" height="97"/>
         <image name="Logo.png" width="496" height="208"/>
+        <image name="SPLASH2.png" width="640" height="1136"/>
         <image name="bg_Login_page.png" width="640" height="1136"/>
         <image name="bg_normal_page.png" width="640" height="1136"/>
         <image name="break_good.png" width="141" height="189"/>

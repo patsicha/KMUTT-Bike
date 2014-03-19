@@ -21,39 +21,47 @@
     IBOutlet UILabel *txtDurabilityTitle;
     IBOutlet UILabel *txtDurability;
     IBOutlet UIBarButtonItem *urgent;
+    NSMutableArray *bikeInfo;
+    NSMutableURLRequest *request;
+    NSString *bikeID;
 }
 @end
 
 @implementation YourPageViewController
+@synthesize receivedData;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    bikeID = [prefs objectForKey:@"bikeID"];
     NSDictionary *Durability = [prefs objectForKey:@"Durability"];
     NSMutableArray *userInfo = [[NSMutableArray alloc] init];
     userInfo = [prefs objectForKey:@"MemberInfo"];
-    
+    bikeInfo =[[NSMutableArray alloc] init];
+    bikeInfo = [prefs objectForKey:@"bikeInfo"];
+    NSLog(@"%@",bikeInfo);
+    Durability = nil;
     if(Durability == nil)
     {
         NSDictionary *dict;
         dict = [NSDictionary dictionaryWithObjectsAndKeys:
-                @"G", @"gear",
-                @"G", @"wheel",
-                @"G", @"break",
-                @"G", @"pedal",
-                @"G", @"saddle",
-                @"G", @"handle",
+                [bikeInfo valueForKey:@"maintain_gear"], @"gear",
+                [bikeInfo valueForKey:@"maintain_wheel"], @"wheel",
+                [bikeInfo valueForKey:@"maintain_break"], @"break",
+                [bikeInfo valueForKey:@"maintain_padle"], @"pedal",
+                [bikeInfo valueForKey:@"maintain_saddle"], @"saddle",
+                [bikeInfo valueForKey:@"maintain_handle"], @"handle",
                 nil];
         Durability = dict;
         [prefs setObject:Durability forKey:@"Durability"];
     }
-    //[prefs setObject:@"100" forKey:@"DurabilityValue"];
+    [prefs setObject:[bikeInfo valueForKey:@"bicycle_durability"] forKey:@"DurabilityValue"];
     NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
     if(strDurability == nil || [strDurability floatValue] < 1)
     {
-        strDurability = @"100.00";
+        //strDurability = ;
         durability = [strDurability floatValue];
         [prefs setObject:strDurability forKey:@"DurabilityValue"];
     }else{
@@ -69,7 +77,7 @@
     txtNo.text = [userInfo valueForKey:@"student_id"]; // student_id
     txtName.text = [userInfo valueForKey:@"student_name_en"]; // student_name_en
     txtLastname.text = [userInfo valueForKey:@"student_surname_en"]; // student_surname_en
-    txtBikeNo.text = _bikeCode;
+    txtBikeNo.text = [bikeInfo valueForKey:@"bicycle_code"];
     txtDurability.text = [[NSString alloc] initWithFormat:@"%.0f%%",durability];
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[userInfo valueForKey:@"student_picture"]]]];
     self.imageView.image = image;
@@ -142,9 +150,8 @@
 
 - (void)okButtonClicked:(SettingsViewController *)aSecondDetailViewController
 {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:nil  forKey:@"MemberInfo"];
-    [prefs setObject:nil  forKey:@"bikeCode"];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopBottom];
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -174,5 +181,7 @@
     NotifyViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"Notify"];
     [self.navigationController pushViewController:svc animated:YES];
 }
+
+
 
 @end

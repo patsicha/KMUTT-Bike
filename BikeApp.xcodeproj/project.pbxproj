@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		1C0337CE18D87AF6002C7915 /* pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337CD18D87AF6002C7915 /* pending.php */; };
 		1C0337D018D8897B002C7915 /* check_pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337CF18D8897B002C7915 /* check_pending.php */; };
-		1C0337D218D8B210002C7915 /* addToRentalLog.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D118D8B210002C7915 /* addToRentalLog.php */; };
+		1C0337D218D8B210002C7915 /* getBikeInfo.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D118D8B210002C7915 /* getBikeInfo.php */; };
+		1C0337D418D99725002C7915 /* SPLASH2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D318D99725002C7915 /* SPLASH2.png */; };
 		1C04076018CB570800367777 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C04075F18CB570800367777 /* LoginViewController.m */; };
 		1C0407CE18CB574100367777 /* achievments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076218CB574100367777 /* achievments.png */; };
 		1C0407CF18CB574100367777 /* arch_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076418CB574100367777 /* arch_bar.png */; };
@@ -207,7 +208,8 @@
 /* Begin PBXFileReference section */
 		1C0337CD18D87AF6002C7915 /* pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = pending.php; sourceTree = "<group>"; };
 		1C0337CF18D8897B002C7915 /* check_pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = check_pending.php; sourceTree = "<group>"; };
-		1C0337D118D8B210002C7915 /* addToRentalLog.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = addToRentalLog.php; sourceTree = "<group>"; };
+		1C0337D118D8B210002C7915 /* getBikeInfo.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = getBikeInfo.php; sourceTree = "<group>"; };
+		1C0337D318D99725002C7915 /* SPLASH2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPLASH2.png; sourceTree = "<group>"; };
 		1C04075E18CB570800367777 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1C04075F18CB570800367777 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1C04076218CB574100367777 /* achievments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = achievments.png; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 		1C04076118CB574100367777 /* UIBikeApps */ = {
 			isa = PBXGroup;
 			children = (
+				1C0337D318D99725002C7915 /* SPLASH2.png */,
 				1CF0DB3218D1EDAF00013827 /* gear_setting_white.png */,
 				1C22645118D1D4E200B731C7 /* gear_setting.png */,
 				1C04086818CBA4F800367777 /* profile_test.jpg */,
@@ -965,7 +968,7 @@
 		2689B36018D5A870006CF4F6 /* PHP-Files */ = {
 			isa = PBXGroup;
 			children = (
-				1C0337D118D8B210002C7915 /* addToRentalLog.php */,
+				1C0337D118D8B210002C7915 /* getBikeInfo.php */,
 				1C0337CF18D8897B002C7915 /* check_pending.php */,
 				2689B36118D5A880006CF4F6 /* login.php */,
 				1C0337CD18D87AF6002C7915 /* pending.php */,
@@ -1124,6 +1127,7 @@
 				1C0407D518CB574100367777 /* 20km_d.png in Resources */,
 				1C04081418CB574100367777 /* break_click.png in Resources */,
 				1C0407E418CB574100367777 /* segoeuii.ttf in Resources */,
+				1C0337D418D99725002C7915 /* SPLASH2.png in Resources */,
 				1CF0DB6D18D2552F00013827 /* break.txt in Resources */,
 				1CF0DB5E18D228E800013827 /* a_01_01.png in Resources */,
 				1CF0DB6B18D254DA00013827 /* brake.png in Resources */,
@@ -1134,7 +1138,7 @@
 				1C0407E318CB574100367777 /* segoeuib.ttf in Resources */,
 				1CF0DB6118D228E800013827 /* tire_pic01.png in Resources */,
 				1C0407E618CB574100367777 /* segoeuiz.ttf in Resources */,
-				1C0337D218D8B210002C7915 /* addToRentalLog.php in Resources */,
+				1C0337D218D8B210002C7915 /* getBikeInfo.php in Resources */,
 				1C0407D418CB574100367777 /* 20km.png in Resources */,
 				1C0407E718CB574100367777 /* seguisb.ttf in Resources */,
 				1CF0DB9A18D2AAFA00013827 /* paddle.txt in Resources */,

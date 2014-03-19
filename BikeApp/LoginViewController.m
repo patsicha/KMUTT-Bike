@@ -15,6 +15,7 @@
     UIActivityIndicatorView *activityView;
     UIView *loadingView;
     UILabel *loadingLabel;
+    IBOutlet UIImageView *spash;
 }
 @end
 
@@ -44,6 +45,17 @@
 	[self setUI];
     //[self fontall];
     
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if([prefs objectForKey:@"MemberInfo"] != nil)
+    {
+        FirstViewController *svc = [self.storyboard instantiateViewControllerWithIdentifier:@"first"];
+        [self presentViewController:svc animated:NO completion:nil];
+    }else{
+        spash.hidden = YES;
+    }
 }
 - (IBAction)login:(id)sender {
     

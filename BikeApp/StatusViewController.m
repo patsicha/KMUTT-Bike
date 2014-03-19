@@ -97,7 +97,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSDictionary *Durability = [prefs objectForKey:@"Durability"];
     NSLog(@"%@",Durability);
-    if([[Durability objectForKey:@"gear"] isEqualToString:@"B"])
+    if([[Durability objectForKey:@"gear"] isEqualToString:@"br"])
     {
         gear_click = [UIImage imageNamed:@"gear_click2.png"];
         gear_good = [UIImage imageNamed:@"gear_fix.png"];
@@ -105,7 +105,7 @@
         gear_good = [UIImage imageNamed:@"gear_good.png"];
         gear_click = [UIImage imageNamed:@"gear_click.png"];
     }
-    if([[Durability objectForKey:@"wheel"] isEqualToString:@"B"])
+    if([[Durability objectForKey:@"wheel"] isEqualToString:@"br"])
     {
         wheel_click = [UIImage imageNamed:@"wheel_click2.png"];
         wheel_good = [UIImage imageNamed:@"wheel_fix.png"];
@@ -114,7 +114,7 @@
         wheel_click = [UIImage imageNamed:@"wheel_click.png"];
     }
     
-    if([[Durability objectForKey:@"break"] isEqualToString:@"B"])
+    if([[Durability objectForKey:@"break"] isEqualToString:@"br"])
     {
         break_good = [UIImage imageNamed:@"break_fix.png"];
         break_click = [UIImage imageNamed:@"break_click2.png"];

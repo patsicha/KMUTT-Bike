@@ -60,7 +60,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
     UIImage *btnMaintainImg;
-    if([[Durability objectForKey:@"gear"] isEqualToString:@"B"])
+    if([[Durability objectForKey:@"gear"] isEqualToString:@"br"])
     {
         btnMaintainImg = [UIImage imageNamed:@"maintain_normal"];
         [button setUserInteractionEnabled:YES];
@@ -95,7 +95,7 @@
     strDurability = [[NSString alloc] initWithFormat:@"%.0f",durability];
     [prefs setObject:strDurability forKey:@"DurabilityValue"];
     NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
-    if([[Durability objectForKey:@"gear"] isEqualToString:@"B"]) [Durability setValue:@"G" forKey:@"gear"];
+    if([[Durability objectForKey:@"gear"] isEqualToString:@"br"]) [Durability setValue:@"ni" forKey:@"gear"];
     NSDictionary *dict = [[NSDictionary alloc] initWithDictionary:Durability];
     [prefs setObject:dict forKey:@"Durability"];
     [self dismissViewControllerAnimated:YES completion:nil];

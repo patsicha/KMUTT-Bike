@@ -43,6 +43,8 @@
     NSString *strDatetime;
     NSURLConnection *theConnection;
     
+    IBOutlet UIImageView *splash;
+    
 }
 @end
 
@@ -57,11 +59,47 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated
+{
+    lblName.alpha = 1;
+    lblWelcome.alpha = 1;
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    if([prefs objectForKey:@"bikeInfo"] != nil)
+    {
+        NSString *post =[NSString stringWithFormat:@"bikecode=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"]];
+        
+        NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+        
+        NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",asciiString);
+        
+        NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/getBikeInfo.php"];
+        request = [NSMutableURLRequest requestWithURL:url
+                                          cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                      timeoutInterval:10.0];
+        [request setHTTPMethod:@"POST"];
+        [request setHTTPBody:postData];
+        
+        theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+        
+        if (theConnection) {
+            self.receivedData = [NSMutableData data];
+        } else {
+            UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+            [connectFailMessage show];
+            
+        }
+        
+    }else{
+        splash.hidden = YES;
+        self.navigationController.navigationBarHidden = NO;
+    }
+}
 - (void)viewDidLoad
 {
-    
+    self.navigationController.navigationBarHidden = YES;
     [super viewDidLoad];
-    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     userInfo = [[NSMutableArray alloc] init];
     userInfo = [prefs objectForKey:@"MemberInfo"];
@@ -70,8 +108,8 @@
     NSString *name = [userInfo valueForKey:@"student_name_en"];
     NSLog(@"%@",userInfo);
     lblName.text = [[NSString alloc] initWithFormat:@"Hi! %@",name ];
-    
-    
+    //splash.hidden = YES;
+    //[self.navigationController]
     [self.navigationItem setHidesBackButton:YES];
 	// Do any additional setup after loading the view.
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
@@ -154,8 +192,8 @@
 
 - (void)okButtonClicked:(SettingsViewController *)aSecondDetailViewController
 {
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [prefs setObject:nil  forKey:@"MemberInfo"];
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideTopBottom];
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -166,11 +204,7 @@
     //[self dismissViewControllerAnimated:YES completion:nil];
     
 }
-- (void)viewDidAppear:(BOOL)animated{
-    lblName.alpha = 1;
-    lblWelcome.alpha = 1;
-    //self.navigationController.navigationBarHidden = NO;
-}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -395,10 +429,11 @@
         transition.duration = 1;
         transition.type = kCATransitionFade;
         transition.subtype = kCATransitionFromTop;
-        svc.bikeCode = [[txtPassword text] uppercaseString];
+        //svc.bikeCode = bikeID;
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setObject:[[txtPassword text] uppercaseString]  forKey:@"bikeCode"];
+        [prefs setObject:bikeID  forKey:@"bikeID"];
         [self.navigationController.view.layer addAnimation:transition forKey:kCATransition];
+        self.navigationController.navigationBarHidden = NO;
         [self.navigationController pushViewController:svc animated:NO];
     }
 }
@@ -517,8 +552,31 @@
             }
             
         }
+        else if( [strMessage isEqualToString:@"OK"] ){
+            //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            NSMutableArray *bikeInfo = [[NSMutableArray alloc]init];
+            bikeInfo = [jsonObjects objectForKey:@"bikeInfo"];
+            NSLog(@"%@",bikeInfo);
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:bikeInfo forKey:@"bikeInfo"];
+            [self goYourBike];
+            
+            
+            NSLog(@"OK");
+            
+        }
+        
         else if( [strMessage isEqualToString:@"APPROVED"] ){
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            NSMutableArray *bikeInfo = [[NSMutableArray alloc]init];
+            bikeInfo = [jsonObjects objectForKey:@"bikeInfo"];
+            NSLog(@"%@",bikeInfo);
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:bikeInfo forKey:@"bikeInfo"];
             [self goYourBike];
             
             
@@ -606,5 +664,7 @@
     
     // release the connection, and the data object
 }
+
+
 
 @end
