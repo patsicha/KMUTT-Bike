@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface UpdateViewController : UIViewController
-
+@property(nonatomic,retain) NSMutableData *receivedData;
 @end

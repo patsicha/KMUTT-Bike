@@ -11,6 +11,7 @@
 		1C0337D018D8897B002C7915 /* check_pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337CF18D8897B002C7915 /* check_pending.php */; };
 		1C0337D218D8B210002C7915 /* getBikeInfo.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D118D8B210002C7915 /* getBikeInfo.php */; };
 		1C0337D418D99725002C7915 /* SPLASH2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D318D99725002C7915 /* SPLASH2.png */; };
+		1C0337D618DA181A002C7915 /* update.php in Resources */ = {isa = PBXBuildFile; fileRef = 1C0337D518DA181A002C7915 /* update.php */; };
 		1C04076018CB570800367777 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C04075F18CB570800367777 /* LoginViewController.m */; };
 		1C0407CE18CB574100367777 /* achievments.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076218CB574100367777 /* achievments.png */; };
 		1C0407CF18CB574100367777 /* arch_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C04076418CB574100367777 /* arch_bar.png */; };
@@ -210,6 +211,7 @@
 		1C0337CF18D8897B002C7915 /* check_pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = check_pending.php; sourceTree = "<group>"; };
 		1C0337D118D8B210002C7915 /* getBikeInfo.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = getBikeInfo.php; sourceTree = "<group>"; };
 		1C0337D318D99725002C7915 /* SPLASH2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SPLASH2.png; sourceTree = "<group>"; };
+		1C0337D518DA181A002C7915 /* update.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = update.php; sourceTree = "<group>"; };
 		1C04075E18CB570800367777 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1C04075F18CB570800367777 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1C04076218CB574100367777 /* achievments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = achievments.png; sourceTree = "<group>"; };
@@ -968,6 +970,7 @@
 		2689B36018D5A870006CF4F6 /* PHP-Files */ = {
 			isa = PBXGroup;
 			children = (
+				1C0337D518DA181A002C7915 /* update.php */,
 				1C0337D118D8B210002C7915 /* getBikeInfo.php */,
 				1C0337CF18D8897B002C7915 /* check_pending.php */,
 				2689B36118D5A880006CF4F6 /* login.php */,
@@ -1073,6 +1076,7 @@
 				1C04081518CB574100367777 /* break_click2.png in Resources */,
 				1CF0DB8818D25F4200013827 /* chain.txt in Resources */,
 				1CF0DB9118D2AA9300013827 /* Magnet_Pedal.png in Resources */,
+				1C0337D618DA181A002C7915 /* update.php in Resources */,
 				1C0407ED18CB574100367777 /* front01.png in Resources */,
 				1C0407D918CB574100367777 /* dotscroll.png in Resources */,
 				1C04086918CBA4F800367777 /* profile_test.jpg in Resources */,

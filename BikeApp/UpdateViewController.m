@@ -13,11 +13,18 @@
 {
     IBOutlet UITextField *txtCode;
     IBOutlet UILabel *lblError;
+    
+    NSURLConnection *theConnection;
+    NSMutableURLRequest *request;
+    UIActivityIndicatorView *activityView;
+    UIView *loadingView;
+    UILabel *loadingLabel;
 }
 
 @end
 
 @implementation UpdateViewController
+@synthesize  receivedData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,7 +53,7 @@
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];// this will do the trick
 }
-#define MAXLENGTH 6
+#define MAXLENGTH 7
 
 - (BOOL)textField:(UITextField *) textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
@@ -76,44 +83,164 @@
 
 - (IBAction)update:(id)sender {
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-   // NSString *bikeCode = [prefs objectForKey:@"bikeCode"];
+    // NSString *bikeCode = [prefs objectForKey:@"bikeCode"];
     if([txtCode.text length] > 0) {
-    if([[txtCode.text substringWithRange:NSMakeRange(2, 4)] isEqualToString:[prefs objectForKey:@"bikeCode"]]) {
-    NSString *result = [txtCode.text substringWithRange:NSMakeRange(0, 2)];
-    txtCode.text =@"";
-    lblError.text = @"";
-    NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
-    int durability = [strDurability intValue];
-    int down = [result intValue];
-    int i;
-    NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
-    for(i = durability ; i > durability - down ; --i) {
-        NSLog(@"%i",i);
-    if(i == 80) if([[Durability objectForKey:@"wheel"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"wheel"];
-    if(i == 70) if([[Durability objectForKey:@"handle"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"handle"];
-    if(i == 60) if([[Durability objectForKey:@"break"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"break"];
-    if(i == 50) if([[Durability objectForKey:@"saddle"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"saddle"];
-    if(i == 40) if([[Durability objectForKey:@"gear"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"gear"];
-    if(i == 30) if([[Durability objectForKey:@"pedal"] isEqualToString:@"G"]) [Durability setValue:@"B" forKey:@"pedal"];
-        
-        
-    }
-    durability = i;
-    strDurability = [[NSString alloc] initWithFormat:@"%d",durability];
-    [prefs setObject:strDurability forKey:@"DurabilityValue"];
-    NSDictionary *dict = [[NSDictionary alloc] initWithDictionary:Durability];
-    [prefs setObject:dict forKey:@"Durability"];
-    [[self parentViewController] viewDidLoad];
-    } else {
-        txtCode.text =@"";
-        lblError.text = @"Error Bike Code";
-        [self shakeView:txtCode];
-    }
+        if([[txtCode.text substringWithRange:NSMakeRange(2, 5)] isEqualToString:[prefs objectForKey:@"bikeCode"]]) {
+            NSString *result = [txtCode.text substringWithRange:NSMakeRange(0, 2)];
+            txtCode.text =@"";
+            lblError.text = @"";
+            NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
+            int durability = [strDurability intValue];
+            int down = [result intValue];
+            int i;
+            NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
+            for(i = durability ; i > durability - down ; --i) {
+                NSLog(@"%i",i);
+                if(i == 80) if([[Durability objectForKey:@"wheel"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"wheel"];
+                if(i == 70) if([[Durability objectForKey:@"handle"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"handle"];
+                if(i == 60) if([[Durability objectForKey:@"break"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"break"];
+                if(i == 50) if([[Durability objectForKey:@"saddle"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"saddle"];
+                if(i == 40) if([[Durability objectForKey:@"gear"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"gear"];
+                if(i == 30) if([[Durability objectForKey:@"pedal"] isEqualToString:@"ni"]) [Durability setValue:@"br" forKey:@"pedal"];
+                
+                
+            }
+            durability = i;
+            strDurability = [[NSString alloc] initWithFormat:@"%d",durability];
+            [prefs setObject:strDurability forKey:@"DurabilityValue"];
+            NSDictionary *dict = [[NSDictionary alloc] initWithDictionary:Durability];
+            [prefs setObject:dict forKey:@"Durability"];
+            [self update_Database];
+            
+        } else {
+            txtCode.text =@"";
+            lblError.text = @"Error Bike Code";
+            [self shakeView:txtCode];
+        }
     }else {
         txtCode.text =@"";
         lblError.text = @"Please Enter Code";
         [self shakeView:txtCode];
     }
 }
+-(void)update_Database
+{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
+    NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
+    NSString *post =[NSString stringWithFormat:@"bikeid=%@&break=%@&gear=%@&handle=%@&pedal=%@&saddle=%@&wheel=%@&durability=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"],[Durability objectForKey:@"break"],[Durability objectForKey:@"gear"],[Durability objectForKey:@"handle"],[Durability objectForKey:@"pedal"],[Durability objectForKey:@"saddle"],[Durability objectForKey:@"wheel"],strDurability];
+    
+    NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
+    
+    NSString *asciiString = [[NSString alloc] initWithData:postData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",asciiString);
+    
+    NSURL *url = [NSURL URLWithString:@"http://kmutt-bike.co.nf/update.php"];
+    request = [NSMutableURLRequest requestWithURL:url
+                                      cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
+                                  timeoutInterval:10.0];
+    [request setHTTPMethod:@"POST"];
+	[request setHTTPBody:postData];
+    
+    theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    
+}
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    [receivedData setLength:0];
+}
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    //sleep(0);
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    
+    theConnection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+    if (theConnection) {
+        self.receivedData = [NSMutableData data];
+    } else {
+		UIAlertView *connectFailMessage = [[UIAlertView alloc] initWithTitle:@"NSURLConnection " message:@"Failed in viewDidLoad"  delegate: self cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+		[connectFailMessage show];
+        
+    }
+    //inform the user
+    NSLog(@"Connection failed! Error - %@", [error localizedDescription]);
+    
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // Hide Progress
+    
+    
+    // 0 = Error
+    // 1 = Completed
+    
+    if(receivedData)
+    {
+        //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        //[activityView stopAnimating];
+        //[loadingView removeFromSuperview];
+        
+        id jsonObjects = [NSJSONSerialization JSONObjectWithData:receivedData options:NSJSONReadingMutableContainers error:nil];
+        
+        // value in key name
+        NSString *strStatus = [jsonObjects objectForKey:@"Status"];
+        NSString *strMessage = [jsonObjects objectForKey:@"Message"];
+        
+        //NSString *strMemberID = [jsonObjects objectForKey:@"MemberID"];
+        NSLog(@"Status = %@",strStatus);
+        NSLog(@"Message = %@",strMessage);
+        
+        NSLog(@"%@",[jsonObjects objectForKey:@"maintain"]);
+        
+        // Completed
+        if( [strMessage isEqualToString:@"UPDATED"] ){
+            
+            NSMutableArray *bikeInfo = [[NSMutableArray alloc]init];
+            bikeInfo = [jsonObjects objectForKey:@"bikeInfo"];
+            NSLog(@"%@",bikeInfo);
+            
+            NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+            [prefs setObject:bikeInfo forKey:@"bikeInfo"];
+            
+            [[self parentViewController] viewDidLoad];
+            
+        }
+        else if( [strMessage isEqualToString:@"OK"] ){
+            //[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            
+            
+            
+            NSLog(@"OK");
+            
+        }
+        else // Error
+        {
+            
+            theConnection = nil;
+            UIAlertView *error =[[UIAlertView alloc]
+                                 initWithTitle:@": ( Error!"
+                                 message:strMessage delegate:self
+                                 cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            //[error show];
+        }
+        
+    }
+    
+    // release the connection, and the data object
+}
 @end

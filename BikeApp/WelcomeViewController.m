@@ -67,7 +67,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     if([prefs objectForKey:@"bikeInfo"] != nil)
     {
-        NSString *post =[NSString stringWithFormat:@"bikecode=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"]];
+        NSString *post =[NSString stringWithFormat:@"bikeid=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"]];
         
         NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
         

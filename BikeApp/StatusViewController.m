@@ -17,38 +17,25 @@
 @interface StatusViewController ()
 {
     NSString *lastSelected;
-    UIImage *gear_good;
-    UIImage *gear_click;
-    UIImage *gear_click2;
-    UIImage *gear_fix;
     
-    UIImage *wheel_good;
-    UIImage *wheel_click;
-    UIImage *wheel_click2;
-    UIImage *wheel_fix;
+    UIImage *img_gear;
+    UIImage *img_gear_click;
     
-    UIImage *break_good;
-    UIImage *break_click;
-    UIImage *break_click2;
-    UIImage *break_fix;
+    UIImage *img_wheel;
+    UIImage *img_wheel_click;
     
-    UIImage *saddle_good;
-    UIImage *saddle_click;
-    UIImage *saddle_click2;
-    UIImage *saddle_fix;
+    UIImage *img_break;
+    UIImage *img_break_click;
     
-    UIImage *pedal_good;
-    UIImage *pedal_click;
-    UIImage *pedal_click2;
-    UIImage *pedal_fix;
+    UIImage *img_saddle;
+    UIImage *img_saddle_click;
     
-    UIImage *handle_good;
-    UIImage *handle_click;
-    UIImage *handle_click2;
-    UIImage *handle_fix;
+    UIImage *img_pedal;
+    UIImage *img_pedal_click;
     
-    //NSDictionary *Durability;
-    
+    UIImage *img_handle;
+    UIImage *img_handle_click;
+
 }
 @end
 
@@ -68,28 +55,7 @@
     
     [super viewDidLoad];
     
-    
     lblTxt.font = segoeui(14);
-    
-    
-    
-    
-    
-    saddle_good = [UIImage imageNamed:@"saddle_good.png"];
-    saddle_click = [UIImage imageNamed:@"saddle_click.png"];
-    saddle_click2 = [UIImage imageNamed:@"saddle_click2.png"];
-    saddle_fix = [UIImage imageNamed:@"saddle_fix.png"];
-    
-    pedal_good = [UIImage imageNamed:@"pedal_good.png"];
-    pedal_click = [UIImage imageNamed:@"pedal_click.png"];
-    pedal_click2 = [UIImage imageNamed:@"pedal_click2.png"];
-    pedal_fix = [UIImage imageNamed:@"pedal_fix.png"];
-    
-    handle_good = [UIImage imageNamed:@"handle_good.png"];
-    handle_click = [UIImage imageNamed:@"handle_click.png"];
-    handle_click2 = [UIImage imageNamed:@"handle_click2.png"];
-    handle_fix = [UIImage imageNamed:@"handle_fix.png"];
-    
     
 }
 -(void)viewDidAppear:(BOOL)animated
@@ -99,39 +65,67 @@
     NSLog(@"%@",Durability);
     if([[Durability objectForKey:@"gear"] isEqualToString:@"br"])
     {
-        gear_click = [UIImage imageNamed:@"gear_click2.png"];
-        gear_good = [UIImage imageNamed:@"gear_fix.png"];
+        img_gear = [UIImage imageNamed:@"gear_fix.png"];
+        img_gear_click = [UIImage imageNamed:@"gear_click2.png"];
     }else{
-        gear_good = [UIImage imageNamed:@"gear_good.png"];
-        gear_click = [UIImage imageNamed:@"gear_click.png"];
+        img_gear = [UIImage imageNamed:@"gear_good.png"];
+        img_gear_click = [UIImage imageNamed:@"gear_click.png"];
     }
+    
     if([[Durability objectForKey:@"wheel"] isEqualToString:@"br"])
     {
-        wheel_click = [UIImage imageNamed:@"wheel_click2.png"];
-        wheel_good = [UIImage imageNamed:@"wheel_fix.png"];
+        img_wheel = [UIImage imageNamed:@"wheel_fix.png"];
+        img_wheel_click = [UIImage imageNamed:@"wheel_click2.png"];
     }else{
-        wheel_good = [UIImage imageNamed:@"wheel_good.png"];
-        wheel_click = [UIImage imageNamed:@"wheel_click.png"];
+        img_wheel = [UIImage imageNamed:@"wheel_good.png"];
+        img_wheel_click = [UIImage imageNamed:@"wheel_click.png"];
     }
     
     if([[Durability objectForKey:@"break"] isEqualToString:@"br"])
     {
-        break_good = [UIImage imageNamed:@"break_fix.png"];
-        break_click = [UIImage imageNamed:@"break_click2.png"];
+        img_break = [UIImage imageNamed:@"break_fix.png"];
+        img_break_click = [UIImage imageNamed:@"break_click2.png"];
     }else{
-        break_good = [UIImage imageNamed:@"break_good.png"];
-        break_click = [UIImage imageNamed:@"break_click.png"];
+        img_break = [UIImage imageNamed:@"break_good.png"];
+        img_break_click = [UIImage imageNamed:@"break_click.png"];
+    }
+    
+    if([[Durability objectForKey:@"saddle"] isEqualToString:@"br"])
+    {
+        img_saddle = [UIImage imageNamed:@"saddle_fix.png"];
+        img_saddle_click = [UIImage imageNamed:@"saddle_click2.png"];
+    }else{
+        img_saddle = [UIImage imageNamed:@"saddle_good.png"];
+        img_saddle_click = [UIImage imageNamed:@"saddle_click.png"];
+    }
+    
+    if([[Durability objectForKey:@"pedal"] isEqualToString:@"br"])
+    {
+        img_pedal = [UIImage imageNamed:@"pedal_fix.png"];
+        img_pedal_click = [UIImage imageNamed:@"pedal_click2.png"];
+    }else{
+        img_pedal = [UIImage imageNamed:@"pedal_good.png"];
+        img_pedal_click = [UIImage imageNamed:@"pedal_click.png"];
+    }
+    
+    if([[Durability objectForKey:@"handle"] isEqualToString:@"br"])
+    {
+        img_handle = [UIImage imageNamed:@"handle_fix.png"];
+        img_handle_click = [UIImage imageNamed:@"handle_click2.png"];
+    }else{
+        img_handle = [UIImage imageNamed:@"handle_good.png"];
+        img_handle_click = [UIImage imageNamed:@"handle_click.png"];
     }
     
     
     
     
-    [btnGear setBackgroundImage:gear_good forState:UIControlStateNormal];
-    [btnWheel setBackgroundImage:wheel_good forState:UIControlStateNormal];
-    [btnBreak setBackgroundImage:break_good forState:UIControlStateNormal];
-    [btnSaddle setBackgroundImage:saddle_good forState:UIControlStateNormal];
-    [btnPedal setBackgroundImage:pedal_good forState:UIControlStateNormal];
-    [btnHandle setBackgroundImage:handle_good forState:UIControlStateNormal];
+    [btnGear setBackgroundImage:img_gear forState:UIControlStateNormal];
+    [btnWheel setBackgroundImage:img_wheel forState:UIControlStateNormal];
+    [btnBreak setBackgroundImage:img_break forState:UIControlStateNormal];
+    [btnSaddle setBackgroundImage:img_saddle forState:UIControlStateNormal];
+    [btnPedal setBackgroundImage:img_pedal forState:UIControlStateNormal];
+    [btnHandle setBackgroundImage:img_handle forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
@@ -142,57 +136,57 @@
 - (IBAction)selected:(id)sender {
     
     lblTxt.text = @"";
-    [btnGear setBackgroundImage:gear_good forState:UIControlStateNormal];
-    [btnWheel setBackgroundImage:wheel_good forState:UIControlStateNormal];
-    [btnBreak setBackgroundImage:break_good forState:UIControlStateNormal];
-    [btnSaddle setBackgroundImage:saddle_good forState:UIControlStateNormal];
-    [btnPedal setBackgroundImage:pedal_good forState:UIControlStateNormal];
-    [btnHandle setBackgroundImage:handle_good forState:UIControlStateNormal];
+    [btnGear setBackgroundImage:img_gear forState:UIControlStateNormal];
+    [btnWheel setBackgroundImage:img_wheel forState:UIControlStateNormal];
+    [btnBreak setBackgroundImage:img_break forState:UIControlStateNormal];
+    [btnSaddle setBackgroundImage:img_saddle forState:UIControlStateNormal];
+    [btnPedal setBackgroundImage:img_pedal forState:UIControlStateNormal];
+    [btnHandle setBackgroundImage:img_handle forState:UIControlStateNormal];
     
     if(sender == btnGear)
     {
-        [btnGear setBackgroundImage:gear_click forState:UIControlStateNormal];
+        [btnGear setBackgroundImage:img_gear_click forState:UIControlStateNormal];
         lblTxt.text = @"Gear";
     }
     
     if(sender == btnWheel)
     {
-        [btnWheel setBackgroundImage:wheel_click forState:UIControlStateNormal];
+        [btnWheel setBackgroundImage:img_wheel_click forState:UIControlStateNormal];
         lblTxt.text = @"Wheel";
     }
     
     if(sender == btnBreak)
     {
-        [btnBreak setBackgroundImage:break_click forState:UIControlStateNormal];
+        [btnBreak setBackgroundImage:img_break_click forState:UIControlStateNormal];
         lblTxt.text = @"Break";
     }
     
     if(sender == btnSaddle)
     {
-        [btnSaddle setBackgroundImage:saddle_click forState:UIControlStateNormal];
+        [btnSaddle setBackgroundImage:img_saddle_click forState:UIControlStateNormal];
         lblTxt.text = @"Saddle";
     }
     
     if(sender == btnPedal)
     {
-        [btnPedal setBackgroundImage:pedal_click forState:UIControlStateNormal];
+        [btnPedal setBackgroundImage:img_pedal_click forState:UIControlStateNormal];
         lblTxt.text = @"Pedal";
     }
     
     if(sender == btnHandle)
     {
-        [btnHandle setBackgroundImage:handle_click forState:UIControlStateNormal];
+        [btnHandle setBackgroundImage:img_handle_click forState:UIControlStateNormal];
         lblTxt.text = @"Handle";
     }
     
     if([lastSelected isEqualToString:lblTxt.text] )
     {
-        [btnGear setBackgroundImage:gear_good forState:UIControlStateNormal];
-        [btnWheel setBackgroundImage:wheel_good forState:UIControlStateNormal];
-        [btnBreak setBackgroundImage:break_good forState:UIControlStateNormal];
-        [btnSaddle setBackgroundImage:saddle_good forState:UIControlStateNormal];
-        [btnPedal setBackgroundImage:pedal_good forState:UIControlStateNormal];
-        [btnHandle setBackgroundImage:handle_good forState:UIControlStateNormal];
+        [btnGear setBackgroundImage:img_gear forState:UIControlStateNormal];
+        [btnWheel setBackgroundImage:img_wheel forState:UIControlStateNormal];
+        [btnBreak setBackgroundImage:img_break forState:UIControlStateNormal];
+        [btnSaddle setBackgroundImage:img_saddle forState:UIControlStateNormal];
+        [btnPedal setBackgroundImage:img_pedal forState:UIControlStateNormal];
+        [btnHandle setBackgroundImage:img_handle forState:UIControlStateNormal];
         lblTxt.text = @"";
         
         if([lastSelected isEqualToString:@"Gear"])
