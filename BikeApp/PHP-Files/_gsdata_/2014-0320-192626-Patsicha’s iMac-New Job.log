@@ -1,0 +1,23 @@
+2014-03-20 19:26:26: -- New Job: ANALYSIS started by On File Change Incremental on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 19:26:26: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:26:26: Change in: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php
+2014-03-20 19:26:29: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 19:26:29: Left to Right: Copy File: 1 
+2014-03-20 19:26:29: -- Analysis Completed. Time 00:00:08, Speed: 0 files/s
+2014-03-20 19:26:29: == New Job: SYNC started by On File Change Incremental on 'Patsicha’s iMac'
+2014-03-20 19:26:29: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:26:34: Copy Over '/Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php' -> 'ftp://fitny.co.nf/kmutt-bike.co.nf/update.php'
+2014-03-20 19:26:34: Source file has changed during Sync from 'type=file size=2502 accu-t=2014-03-20 19:26:19' to 'size=2502 time=2014-03-20 19:26:33', will be retried
+2014-03-20 19:26:35: Source file has changed during Upload to 'size=2502 time=2014-03-20 19:26:33', so Cancel and retry Upload.
+2014-03-20 19:26:36: Copy Over '/Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php' -> 'ftp://fitny.co.nf/kmutt-bike.co.nf/update.php'
+2014-03-20 19:26:37: Save State File /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/_gsdata_/_file_state_v4._gs
+2014-03-20 19:26:39: Save State File ftp://fitny.co.nf/kmutt-bike.co.nf/_gsdata_/_file_state_v4._gs
+2014-03-20 19:26:40: Items Synced OK: 2, Errors: 0
+2014-03-20 19:26:40: == Sync Completed. Time: 00:00:11, Speed: 314.0/s
+2014-03-20 19:26:40: --- Do one more Analyze to get latest changes of this Sync ---
+2014-03-20 19:26:40: -- New Job: ANALYSIS started by On File Change PostSync Re-Analyze on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 19:26:40: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:26:40: Change in: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php
+2014-03-20 19:26:41: Changes: 0, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 19:26:41: -- Analysis Completed. Time 00:00:12, Speed: 0 files/s
+2014-03-20 19:26:41: 

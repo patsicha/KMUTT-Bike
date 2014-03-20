@@ -87,8 +87,7 @@
     if([txtCode.text length] > 0) {
         if([[txtCode.text substringWithRange:NSMakeRange(2, 5)] isEqualToString:[prefs objectForKey:@"bikeCode"]]) {
             NSString *result = [txtCode.text substringWithRange:NSMakeRange(0, 2)];
-            txtCode.text =@"";
-            lblError.text = @"";
+            
             NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
             int durability = [strDurability intValue];
             int down = [result intValue];
@@ -128,7 +127,7 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary *Durability = [[NSMutableDictionary alloc] initWithDictionary:[prefs objectForKey:@"Durability"]];
     NSString *strDurability = [prefs objectForKey:@"DurabilityValue"];
-    NSString *post =[NSString stringWithFormat:@"bikeid=%@&break=%@&gear=%@&handle=%@&pedal=%@&saddle=%@&wheel=%@&durability=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"],[Durability objectForKey:@"break"],[Durability objectForKey:@"gear"],[Durability objectForKey:@"handle"],[Durability objectForKey:@"pedal"],[Durability objectForKey:@"saddle"],[Durability objectForKey:@"wheel"],strDurability];
+    NSString *post =[NSString stringWithFormat:@"bikeid=%@&break=%@&gear=%@&handle=%@&pedal=%@&saddle=%@&wheel=%@&durability=%@&userid=%@&code=%@&distance=%@", [[prefs objectForKey:@"bikeInfo"] valueForKey:@"bicycle_id"],[Durability objectForKey:@"break"],[Durability objectForKey:@"gear"],[Durability objectForKey:@"handle"],[Durability objectForKey:@"pedal"],[Durability objectForKey:@"saddle"],[Durability objectForKey:@"wheel"],strDurability,[[prefs objectForKey:@"MemberInfo"] valueForKey:@"student_id"],[txtCode text],[txtCode.text substringWithRange:NSMakeRange(0, 2)]];
     
     NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
     
@@ -216,7 +215,8 @@
             
             NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
             [prefs setObject:bikeInfo forKey:@"bikeInfo"];
-            
+            txtCode.text =@"";
+            lblError.text = @"";
             [[self parentViewController] viewDidLoad];
             
         }

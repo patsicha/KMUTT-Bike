@@ -1,0 +1,21 @@
+2014-03-20 19:27:00: -- New Job: ANALYSIS started by On File Change Incremental on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 19:27:00: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:27:00: Change in: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php
+2014-03-20 19:27:02: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 19:27:02: Left to Right: Copy File: 1 
+2014-03-20 19:27:02: -- Analysis Completed. Time 00:00:08, Speed: 0 files/s
+2014-03-20 19:27:02: == New Job: SYNC started by On File Change Incremental on 'Patsicha’s iMac'
+2014-03-20 19:27:02: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:27:04: Source file has changed during Upload to 'size=2618 time=2014-03-20 19:27:02', so Cancel and retry Upload.
+2014-03-20 19:27:06: Copy Over '/Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php' -> 'ftp://fitny.co.nf/kmutt-bike.co.nf/update.php'
+2014-03-20 19:27:06: Save State File /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/_gsdata_/_file_state_v4._gs
+2014-03-20 19:27:08: Save State File ftp://fitny.co.nf/kmutt-bike.co.nf/_gsdata_/_file_state_v4._gs
+2014-03-20 19:27:09: Items Synced OK: 1, Errors: 0
+2014-03-20 19:27:09: == Sync Completed. Time: 00:00:07, Speed: 590.0/s
+2014-03-20 19:27:09: --- Do one more Analyze to get latest changes of this Sync ---
+2014-03-20 19:27:09: -- New Job: ANALYSIS started by On File Change PostSync Re-Analyze on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 19:27:09: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:27:09: Change in: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php
+2014-03-20 19:27:09: Changes: 0, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 19:27:09: -- Analysis Completed. Time 00:00:07, Speed: 0 files/s
+2014-03-20 19:27:10: 

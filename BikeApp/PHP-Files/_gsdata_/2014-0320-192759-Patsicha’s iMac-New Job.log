@@ -1,0 +1,14 @@
+2014-03-20 19:27:59: -- New Job: ANALYSIS started by On File Change Incremental on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 19:27:59: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:27:59: Change in: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php
+2014-03-20 19:28:02: Changes: 1, Conflicts: 0, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 19:28:02: Left to Right: Copy File: 1 
+2014-03-20 19:28:02: -- Analysis Completed. Time 00:00:08, Speed: 0 files/s
+2014-03-20 19:28:02: == New Job: SYNC started by On File Change Incremental on 'Patsicha’s iMac'
+2014-03-20 19:28:02: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 19:28:06: Copy Over '/Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/update.php' -> 'ftp://fitny.co.nf/kmutt-bike.co.nf/update.php'
+2014-03-20 19:28:06: Save State File /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/_gsdata_/_file_state_v4._gs
+2014-03-20 19:28:08: Save State File ftp://fitny.co.nf/kmutt-bike.co.nf/_gsdata_/_file_state_v4._gs
+2014-03-20 19:28:10: Items Synced OK: 1, Errors: 0
+2014-03-20 19:28:10: == Sync Completed. Time: 00:00:08, Speed: 598.0/s
+2014-03-20 19:28:10: 

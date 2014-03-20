@@ -1,0 +1,27 @@
+2014-03-20 05:19:37: -- New Job: ANALYSIS started by On File Change 1st Full Analyze on 'Patsicha’s iMac' (GoodSync 4.5.1.1)
+2014-03-20 05:19:37: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 05:19:37: L: State file does not exist: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/_gsdata_/_file_state_v4._gs
+2014-03-20 05:19:37: L: Files: 5 (excluded 0). Folders: 0 (excluded 1). /dev/disk0s2 HFS, Free: 291.3 GB, Total: 697.0 GB
+2014-03-20 05:19:40: R: State file does not exist: ftp://fitny.co.nf/kmutt-bike.co.nf/_gsdata_/_file_state_v4._gs
+2014-03-20 05:19:41: R: Files: 5 (excluded 0). Folders: 0 (excluded 1). FTP: ::ffff:83.125.22.192 FTP server ready
+2014-03-20 05:19:41: /check_pending.php: Conflict: New files that differ
+2014-03-20 05:19:41: /getBikeInfo.php: Conflict: New files that differ
+2014-03-20 05:19:41: /login.php: Conflict: New files that differ
+2014-03-20 05:19:41: /pending.php: Conflict: New files that differ
+2014-03-20 05:19:41: /update.php: Conflict: New files that differ
+2014-03-20 05:19:41: Analyze has finished with Conflicts. Resolve Conflicts by selecting the correct sync direction, then click Sync
+2014-03-20 05:19:41: Changes: 5, Conflicts: 5, CopyTime: 0, CopyState: 0/0, Errors: 0
+2014-03-20 05:19:41: -- Analysis Completed. Time 00:00:09, Speed: 0 files/s
+2014-03-20 05:19:41: == New Job: SYNC started by On File Change 1st Full Analyze on 'Patsicha’s iMac'
+2014-03-20 05:19:41: /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files <-> ftp://fitny.co.nf/kmutt-bike.co.nf, WaitForLocksMinutes=20, ReconnectSecs=120
+2014-03-20 05:19:41: /check_pending.php: unresolved conflict results in No Copy
+2014-03-20 05:19:41: /getBikeInfo.php: unresolved conflict results in No Copy
+2014-03-20 05:19:41: /login.php: unresolved conflict results in No Copy
+2014-03-20 05:19:41: /pending.php: unresolved conflict results in No Copy
+2014-03-20 05:19:41: /update.php: unresolved conflict results in No Copy
+2014-03-20 05:19:41: Save State File /Users/patsichat/Dropbox/ss FITNY/BikeApp/BikeApp/BikeApp/PHP-Files/_gsdata_/_file_state_v4._gs
+2014-03-20 05:19:44: Save State File ftp://fitny.co.nf/kmutt-bike.co.nf/_gsdata_/_file_state_v4._gs
+2014-03-20 05:19:44: Sync finished with 5 unresolved conflicts. Click Conflicts button to see unresolved conflicts
+2014-03-20 05:19:47: Items Synced OK: 0, Errors: 0
+2014-03-20 05:19:47: == Sync Completed. Time: 00:00:06, Speed: 1.3 KB/s
+2014-03-20 05:19:48: 
