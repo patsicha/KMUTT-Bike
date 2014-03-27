@@ -32,10 +32,10 @@
     }else{
         $arr["Status"] = "1";
         $arr["Message"] = "APPROVED";
-       // $strSQL = "INSERT INTO `rental log`(`user_id`, `bicycle_id`, `check_out_date_time`) VALUES ('".$userID."','".$bikeID."','".$datetime."')";
-        //$objQuery = mysql_query($strSQL);
-        //$strSQL = "UPDATE  `bicycle` SET  `bicycle_status` =  'Rented' WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
-        //$objQuery = mysql_query($strSQL);
+        $strSQL = "INSERT INTO `rental log`(`user_id`, `bicycle_id`, `check_out_date_time`) VALUES ('".$userID."','".$bikeID."','".$datetime."')";
+        $objQuery = mysql_query($strSQL);
+        $strSQL = "UPDATE  `bicycle` SET  `bicycle_status` =  'Rented' WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
+        $objQuery = mysql_query($strSQL);
         $strSQL = "SELECT * FROM `bicycle` INNER JOIN `bicycle model information` ON `bicycle`.`bicycle_model` = `bicycle model information`.`bicycle_model` INNER JOIN `bicycle maintain` ON `bicycle`.`bicycle_id` = `bicycle maintain`.`bicycle_id` WHERE  `bicycle`.`bicycle_id` =  '".$bikeID."' LIMIT 1";
         $objQuery = mysql_query($strSQL);
         $intNumField = mysql_num_fields($objQuery);
